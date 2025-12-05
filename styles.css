@@ -231,6 +231,6 @@ nav a:hover {
   /* Active slide effect */
   #slideshow .active {
     opacity: 1;
-    filter: blur(1px); /* adjust blur amount here */
+    filter: blur(0px); /* adjust blur amount here */
   }
 </style>
