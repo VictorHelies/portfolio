@@ -58,11 +58,12 @@
   </div>
 </section>
 <!-- Slideshow section -->
-<section id="slideshow" style="position: absolute; width: 70%; height: 350px; overflow: hidden; margin-bottom: 2rem;">
-  <img src="images/apu_cad.png" class="slide" style="opacity: 1;">
+<section id="slideshow">
+  <img src="images/apu_cad.png" class="slide">
   <img src="images/caesar.png" class="slide">
   <img src="images/usv.png" class="slide">
 </section>
+
 
     <!-- About section -->
     <section id="about" class="section">
@@ -323,21 +324,29 @@
       <p>© Victor Héliès – 2025</p>
     </div>
   </footer>
-</body>
+    <footer class="footer">
+    <div class="container">
+      <p>© Victor Héliès – 2025</p>
+    </div>
+  </footer>
+
   <script>
-  let slides = document.querySelectorAll("#slideshow .slide");
-  let currentIndex = 0;
+    const slides = document.querySelectorAll("#slideshow .slide");
+    let currentIndex = 0;
 
-  // Make the first slide visible
-  slides[currentIndex].classList.add("active");
+    if (slides.length > 0) {
+      slides[currentIndex].classList.add("active");
 
-  setInterval(() => {
-    slides[currentIndex].classList.remove("active");
+      setInterval(() => {
+        slides[currentIndex].classList.remove("active");
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add("active");
+      }, 3500);
+    }
+  </script>
+</body>
+</html>
 
-    currentIndex = (currentIndex + 1) % slides.length;
-
-    slides[currentIndex].classList.add("active");
-  }, 3500); // 3.5 seconds per image (change if needed)
-</script>
+</body>
 
 </html>
