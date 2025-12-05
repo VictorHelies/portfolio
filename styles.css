@@ -208,30 +208,30 @@ nav a:hover {
   display: block;
 }
 
-<style>
-  #slideshow {
-    position: relative;
-    width: 100%;
-    height: 350px; /* adjust this height */
-    overflow: hidden;
-  }
+/* Slideshow */
+#slideshow {
+  position: relative;
+  width: 70%;          /* match the HTML width */
+  height: 350px;       /* adjust this height if you want */
+  overflow: hidden;
+  margin: 0 auto 2rem; /* horizontally center the slideshow */
+}
 
-  #slideshow .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    opacity: 0;
-    filter: blur(0px);
-    transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
-  }
+#slideshow .slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  filter: blur(0px);
+  transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
+}
 
-  /* Active slide effect */
-  #slideshow .active {
-    opacity: 1;
-    filter: blur(0px); /* adjust blur amount here */
-  }
-</style>
+/* Active slide effect */
+#slideshow .active {
+  opacity: 1;
+  filter: blur(0px); /* set >0 if you want visible blur */
+}
