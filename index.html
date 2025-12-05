@@ -57,6 +57,12 @@
 
   </div>
 </section>
+<!-- Slideshow section -->
+<section id="slideshow" style="position: relative; width: 100%; height: 350px; overflow: hidden; margin-bottom: 2rem;">
+  <img src="images/apu_cad.png" class="slide" style="opacity: 1;">
+  <img src="images/caesar.png" class="slide">
+  <img src="images/usv.png" class="slide">
+</section>
 
     <!-- About section -->
     <section id="about" class="section">
@@ -318,4 +324,20 @@
     </div>
   </footer>
 </body>
+  <script>
+  let slides = document.querySelectorAll("#slideshow .slide");
+  let currentIndex = 0;
+
+  // Make the first slide visible
+  slides[currentIndex].classList.add("active");
+
+  setInterval(() => {
+    slides[currentIndex].classList.remove("active");
+
+    currentIndex = (currentIndex + 1) % slides.length;
+
+    slides[currentIndex].classList.add("active");
+  }, 3500); // 3.5 seconds per image (change if needed)
+</script>
+
 </html>
