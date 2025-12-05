@@ -207,3 +207,30 @@ nav a:hover {
   margin-bottom: 0.75rem;
   display: block;
 }
+
+<style>
+  #slideshow {
+    position: relative;
+    width: 100%;
+    height: 350px; /* adjust this height */
+    overflow: hidden;
+  }
+
+  #slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    filter: blur(0px);
+    transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
+  }
+
+  /* Active slide effect */
+  #slideshow .active {
+    opacity: 1;
+    filter: blur(2px); /* adjust blur amount here */
+  }
+</style>
