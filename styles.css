@@ -225,6 +225,7 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  border-radius: 15px;
   opacity: 0;
   filter: blur(0px);
   transition: opacity 1.2s ease-in-out, filter 1.2s ease-in-out;
