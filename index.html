@@ -15,7 +15,16 @@
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <!-- Projects dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">
+          Projects <span class="arrow">▾</span>
+        </button>
+        <div class="dropdown-content">
+          <a href="#project-ev-simulation">EV Powertrain Simulation</a>
+          <a href="#project-suspension-design">Suspension Design Optimization</a>
+          <a href="#project-arduino">Arduino-based Data Logger</a>
+          <!-- Add more as needed -->
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -215,7 +224,7 @@
         
           <div class="cards">
           <!-- Project 1 -->
-          <article class="card">
+          <article id="CAESAR parts design" class="card">
             <img src="images/caesar.png" alt="CAESAR preview" class="card-img"/>
             <h3>Craddle design for CAESAR artillery piece</h3>
             <p class="meta">University project · ENSTA 2025 · Abaqus, Catia, Python</p>
@@ -235,7 +244,7 @@
           </article>
 
           <!-- Project 2 -->
-          <article class="card">
+          <article id="Gearbox robotization" class="card">
             <img src="images/bmw120d.png" alt="Gearbox robotization preview" class="card-img"/>
             <h3>Robotization of a BMW 120D gearbox</h3>
             <p class="meta">University project · ENSTA 2024 · Python, OnShape, Catia</p>
@@ -254,7 +263,7 @@
           </article>
 
           <!-- Project 3 -->
-          <article class="card">
+          <article id="USV launching system" class="card">
             <img src="images/usv.png" alt="USV launching system preview" class="card-img"/>
             <h3>USV launching system</h3>
             <p class="meta">University project · ENSTA 2024 · RDM7, Abaqus, Catia, Python</p>
@@ -275,7 +284,7 @@
           </article>
 
           <!-- Project 4 -->
-          <article class="card">
+          <article id="fishing gear" class="card">
             <img src="images/baitcaster_cutout.png" alt="CAD model of the fishing reel" class="card-img"/>
             <h3>Low-hardware 3D-printed fishing reel</h3>
             <p class="meta">Personnal project · 2025 · OnShape, Bambustudio</p>
@@ -345,6 +354,29 @@
       }, 3500);
     }
   </script>
+  <script>
+  const dropdown = document.querySelector('.dropdown');
+  const dropbtn = document.querySelector('.dropbtn');
+
+  // Toggle dropdown when clicking "Projects ▾"
+  dropbtn.addEventListener('click', function (e) {
+    e.stopPropagation(); // prevent click from bubbling to document
+    dropdown.classList.toggle('open');
+  });
+
+  // Close dropdown when clicking anywhere else
+  document.addEventListener('click', function () {
+    dropdown.classList.remove('open');
+  });
+
+  // Close dropdown when a project is selected
+  document.querySelectorAll('.dropdown-content a').forEach(link => {
+    link.addEventListener('click', function () {
+      dropdown.classList.remove('open');
+    });
+  });
+</script>
+
 </body>
 </html>
 
