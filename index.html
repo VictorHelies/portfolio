@@ -5,206 +5,215 @@
   <title>Victor Héliès – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Victor Héliès: professional experiences, university projects, and other personal projects." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script defer src="https://cloud.umami.is/script.js" data-website-id="13dfb3e0-6b2c-4b80-9522-8ed5c5b0965f"></script>
 </head>
 <body>
-  <header class="top-bar">
-    <div class="container">
-      <h1 class="logo">Victor Héliès</h1>
-      <nav>
+  <header class="top-bar" id="topbar">
+    <div class="container top-bar-inner">
+      <a href="#top" class="logo">Victor Héliès</a>
+      <nav aria-label="Main navigation">
         <a href="#about">About</a>
         <a href="#education">Education</a>
         <a href="#experience">Experience</a>
-        <!-- Projects dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn">
-          Projects <span class="arrow">▾</span>
-        </button>
-        <div class="dropdown-content">
-          <a href="#CAESAR-parts-design">CAESAR parts design</a>
-          <a href="#Gearbox-robotization">Gearbox robotization</a>
-          <a href="#USV-launch-system">USV launch system</a>
-          <a href="#Fishing-gear">Fishing gear</a>
-          <a href="#FPV-drone">4k FPV drone</a>
-          <a href="#Job-Application-Assistant">Job Application Software</a>
-          <!-- Add more as needed -->
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+            Projects <span class="arrow">▾</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="#CAESAR-parts-design">CAESAR parts design</a>
+            <a href="#Gearbox-robotization">Gearbox robotization</a>
+            <a href="#USV-launch-system">USV launch system</a>
+            <a href="#Fishing-gear">Fishing gear</a>
+            <a href="#FPV-drone">4K FPV drone</a>
+            <a href="#Job-Application-Assistant">Job Application Software</a>
           </div>
+        </div>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero / Intro section -->
-    <section class="hero" style="padding: 3rem 0 2rem; background-color: #ffffff; margin-bottom: 1rem;">
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; gap: 2rem;">
-    
-    <!-- LEFT: Your intro text -->
-    <div style="flex: 1;">
-      <h2 style="font-size: 2rem; margin-bottom: 1rem;">Hi, I'm Victor</h2>
-      <p>
-        I'm a final year <strong>mechanical engineering</strong> student at ENSTA Brest & CTU Prague, with a strong interest in <strong>numerical modeling</strong>, <strong>stress-oriented CAD</strong>, <strong>process automation</strong>, and the <strong>aerospace, naval & defense industries</strong>.
-      </p>
-      <p style="margin-bottom: 5px;">What you will find here:</p>
-          <ul style="margin-top: 10px; padding-left: 20px;">
-            <li>Information about myself (degree, skills, interests...).</li>
-            <li>Reports and files (CAD models, code files...) from university projects.</li>
+  <main id="top">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow anim anim-1">Mechanical engineering · Portfolio</p>
+          <h2 class="anim anim-2">Hi, I'm Victor</h2>
+          <p class="anim anim-3">
+            I'm a final year <strong>mechanical engineering</strong> student at ENSTA Brest &amp; CTU Prague, with a strong interest in <strong>numerical modeling</strong>, <strong>stress-oriented CAD</strong>, <strong>process automation</strong>, and the <strong>aerospace, naval &amp; defense industries</strong>.
+          </p>
+          <p class="list-lead anim anim-3">What you will find here:</p>
+          <ul class="anim anim-3">
+            <li>Information about myself (degree, skills, interests…).</li>
+            <li>Reports and files (CAD models, code files…) from university projects.</li>
             <li>Reports and files from previous work experiences.</li>
           </ul>
-
-      <div style="margin-top: 1rem;">
-        <a href="#projects" class="btn primary">View my projects</a>
-        <a href="#contact" class="btn">Get in touch</a>
+          <div class="hero-links anim anim-4">
+            <a href="#projects" class="btn primary">View my projects</a>
+            <a href="#contact" class="btn">Get in touch</a>
+          </div>
+          <div class="hero-facts anim anim-5" aria-label="Key facts">
+            <div class="fact">
+              <span class="fact-label">Status</span>
+              <span class="fact-value">Available Sept–Oct 2026</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Based in</span>
+              <span class="fact-value">Brest, FR · Prague, CZ</span>
+            </div>
+            <div class="fact">
+              <span class="fact-label">Languages</span>
+              <span class="fact-value">FR · EN · DE</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-photo anim anim-2">
+          <img src="images/IMG_5098.JPG" alt="Portrait of Victor Héliès" />
+        </div>
       </div>
-    </div>
+    </section>
 
-    <!-- RIGHT: Profile picture -->
-    <div>
-      <img src="images/IMG_5098.JPG" 
-           alt="Profile Picture"
-           style="width: 180px; height: 180px; border-radius: 50%; object-fit: cover; box-shadow: 0 3px 10px rgba(0,0,0,0.15);">
-    </div>
+    <!-- Slideshow -->
+    <section id="slideshow" class="reveal" aria-label="Project highlights slideshow">
+      <img src="images/apu_slideshow.png" class="slide" alt="APU test bench" />
+      <img src="images/drone_slideshow.png" class="slide" alt="FPV drone" />
+      <img src="images/baitcaster_slideshow.png" class="slide" alt="3D-printed baitcaster reel" />
+      <img src="images/simscape_slideshow.png" class="slide" alt="Simulation model" />
+      <img src="images/usv_slideshow.png" class="slide" alt="USV launch system" />
+    </section>
 
-  </div>
-</section>
-<!-- Slideshow section -->
-<section id="slideshow" style="position: relative; width: 90%; height: 350px; overflow: hidden; margin-bottom: 2rem;">
-  <img src="images/apu_slideshow.png" class="slide">
-  <img src="images/drone_slideshow.png" class="slide">
-  <img src="images/baitcaster_slideshow.png" class="slide">
-  <img src="images/simscape_slideshow.png" class="slide">
-  <img src="images/usv_slideshow.png" class="slide">
-</section>
-
-
-    <!-- About section -->
+    <!-- About -->
     <section id="about" class="section">
       <div class="container">
-        <h2>About me</h2>
-        <p>
-          I'm a final year master's student, currently enrolled at <a href="https://www.ensta.fr/" target="_blank"> ENSTA Brest</a> in vehicle architecture. 
-          I'm pursuing the <a href="https://www.mae.cvut.cz/" target="_blank"> Master of Automotive Engineering</a> in parallel at <a href="https://www.cvut.cz/en" target="_blank"> CTU Prague</a>.
-        </p>
-        <!-- Bullet list #1 -->
-        <p style="margin-bottom: 5px;">Key information:</p>
-          <ul style="margin-top: 10px; padding-left: 20px;">
+        <h2 class="reveal">About me</h2>
+        <div class="reveal">
+          <p>
+            I'm a final year master's student, currently enrolled at <a href="https://www.ensta.fr/" target="_blank" rel="noopener">ENSTA Brest</a> in vehicle architecture.
+            I'm pursuing the <a href="https://www.mae.cvut.cz/" target="_blank" rel="noopener">Master of Automotive Engineering</a> in parallel at <a href="https://www.cvut.cz/en" target="_blank" rel="noopener">CTU Prague</a>.
+          </p>
+          <p class="list-lead">Key information:</p>
+          <ul>
             <li>Available from September/October 2026 onwards.</li>
             <li>Driving and boat licenses.</li>
             <li>Fluent in English (professional level), French (native), and intermediate German.</li>
           </ul>
-    
-        <!-- Bullet list #2 -->
-        <p style="margin-top: 20px;">Proficiency in the following software:</p>
-          <ul style="margin-top: 10px; padding-left: 20px;">
+          <p class="list-lead">Proficiency in the following software:</p>
+          <ul>
             <li><strong>CATIA V5</strong>, SolidWorks, <strong>Abaqus</strong>, <strong>ANSYS</strong>, RDM7 and <strong>OnShape</strong>.</li>
             <li><strong>Matlab/Simulink</strong> and Siemens Simcenter Amesim.</li>
-            <li><strong>Python</strong> (OpenAI API, json, socket, PySide6, pandas, network...) and C++ for Arduino.</li>
+            <li><strong>Python</strong> (OpenAI API, json, socket, PySide6, pandas, network…) and C++ for Arduino.</li>
           </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Education section -->
+    <!-- Education -->
     <section id="education" class="section">
       <div class="container">
-        <h2>Education</h2>
-            <div class="cards">
-            <article class="card">
-              <h3>Engineering Degree in Vehicle Architecture</h3>
-              <p class="meta">ENSTA, Brest (France) - 2023-2026</p>
-              <p>I am currently studying in the continuous engineering program at <strong>ENSTA</strong> (formerly ENSTA Bretagne), a French engineering curriculum equivalent to a master’s degree. Throughout the program, I have built a solid foundation in the following areas:</p> 
-              <ul> 
-                <li><strong>Finite Element Analysis</strong>, structural fatigue, and modal analysis.</li> 
-                <li>Multibody dynamics, tire modeling, vehicle dynamics, and advanced driver assistance systems.</li> 
-                <li>Composite and polymer material behavior, metallic alloys and heat treatments, and <strong>manufacturing processes</strong>.</li> 
-                <li>Energy systems, including thermodynamics, fluid mechanics, and <strong>internal combustion engines</strong>.</li> 
-              </ul> <p>Beyond coursework, I am involved in the FPV drone student association and the robotics club. These activities strengthen my practical engineering skills, hands-on prototyping experience, and ability to work effectively in a team.</p> 
-              <ul> 
-                <li>Proficient in <strong>CAD and FEA</strong> tools such as CATIA V5, SolidWorks, Abaqus, and OnShape.</li> 
-                <li>Experienced in <strong>modeling physical system behavior</strong> with Matlab/Simulink, Siemens Simcenter Amesim, and Python.</li> 
-                <li>Developed algorithms in C++ for Arduino, and Python. Used Python for <strong>multi-agents simulations</strong>,  <strong>user interfaces</strong>, and custom-made <strong>communications</strong> for projects such as a multiplayer videogame.</li> 
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Master of Automotive Engineering</h3>
-              <p class="meta">Czech Technical University, Prague (Czech Republic) - 2025-2026</p>
-              <p>I'm currently completing this Master’s degree in parallel with my engineering program at ENSTA Bretagne My coursework spans <strong>Thermodynamics, Dynamics of Solids, Electrotechnics and Sustainable Mobility</strong>. Through this dual curriculum, I’ve developed a strong multidisciplinary foundation in automotive systems, supported by hands-on experience in simulation, control strategy development, and mechanical design. My cursus there includes the following themes:</p>
-              <ul>
-                <li>Theory of internal combustion engine and thermodynamics, modeling of ICE behavior with the GT-suite using 0D/1D/3D models (1-zone, 2-zones and multizones).</li>
-                <li><strong>Power electronics</strong> and electric accessories of ICE, AC-motor control systems.</li>
-                <li>Mechanical, hydraulical transmissions and <strong>hybrid powertrains</strong>.</li>
-                <li>Multibody vehicle modeling, dynamic modeling of automotive suspension systems, vehicle dynamics.</li>
-              </ul>
-            </article>
-            <article class="card">
-              <h3>Preparatory Classes - PSI</h3>
-              <p class="meta">Lycée Naval, Brest (France) - 2021-2023</p>
-              <p>During my Preparatory Classes PSI at the Lycée Naval — a <strong>French military</strong>-affiliated school — I completed an intensive scientific and technical curriculum that strengthened my foundations in <strong>mathematics, physics, litterature and engineering</strong>. This period allowed me to gain my first hands-on experience with Python, MATLAB, and SolidWorks, culminating in a <strong>numerical simulation</strong> project modeling fire propagation in confined environments. Beyond academics, the military environment played a central role in shaping my mindset: through demanding collective activities, I developed strong <strong>teamwork and leadership</strong> abilities, and cultivated essential qualities such as perseverance, rigor, resilience, and decisiveness — values that continue to guide me in my engineering work.</p>
-            </article>
+        <h2 class="reveal">Education</h2>
+        <div class="cards">
+          <article class="card reveal">
+            <h3>Engineering Degree in Vehicle Architecture</h3>
+            <p class="meta">ENSTA, Brest (France) · 2023–2026</p>
+            <p>I am currently studying in the continuous engineering program at <strong>ENSTA</strong> (formerly ENSTA Bretagne), a French engineering curriculum equivalent to a master's degree. Throughout the program, I have built a solid foundation in the following areas:</p>
+            <ul>
+              <li><strong>Finite Element Analysis</strong>, structural fatigue, and modal analysis.</li>
+              <li>Multibody dynamics, tire modeling, vehicle dynamics, and advanced driver assistance systems.</li>
+              <li>Composite and polymer material behavior, metallic alloys and heat treatments, and <strong>manufacturing processes</strong>.</li>
+              <li>Energy systems, including thermodynamics, fluid mechanics, and <strong>internal combustion engines</strong>.</li>
+            </ul>
+            <p>Beyond coursework, I am involved in the FPV drone student association and the robotics club. These activities strengthen my practical engineering skills, hands-on prototyping experience, and ability to work effectively in a team.</p>
+            <ul>
+              <li>Proficient in <strong>CAD and FEA</strong> tools such as CATIA V5, SolidWorks, Abaqus, and OnShape.</li>
+              <li>Experienced in <strong>modeling physical system behavior</strong> with Matlab/Simulink, Siemens Simcenter Amesim, and Python.</li>
+              <li>Developed algorithms in C++ for Arduino, and Python. Used Python for <strong>multi-agent simulations</strong>, <strong>user interfaces</strong>, and custom-made <strong>communications</strong> for projects such as a multiplayer videogame.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Master of Automotive Engineering</h3>
+            <p class="meta">Czech Technical University, Prague (Czech Republic) · 2025–2026</p>
+            <p>I'm currently completing this Master's degree in parallel with my engineering program at ENSTA Bretagne. My coursework spans <strong>Thermodynamics, Dynamics of Solids, Electrotechnics and Sustainable Mobility</strong>. Through this dual curriculum, I've developed a strong multidisciplinary foundation in automotive systems, supported by hands-on experience in simulation, control strategy development, and mechanical design. My cursus there includes the following themes:</p>
+            <ul>
+              <li>Theory of internal combustion engine and thermodynamics, modeling of ICE behavior with the GT-suite using 0D/1D/3D models (1-zone, 2-zones and multizones).</li>
+              <li><strong>Power electronics</strong> and electric accessories of ICE, AC-motor control systems.</li>
+              <li>Mechanical, hydraulical transmissions and <strong>hybrid powertrains</strong>.</li>
+              <li>Multibody vehicle modeling, dynamic modeling of automotive suspension systems, vehicle dynamics.</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Preparatory Classes – PSI</h3>
+            <p class="meta">Lycée Naval, Brest (France) · 2021–2023</p>
+            <p>During my Preparatory Classes PSI at the Lycée Naval — a <strong>French military</strong>-affiliated school — I completed an intensive scientific and technical curriculum that strengthened my foundations in <strong>mathematics, physics, literature and engineering</strong>. This period allowed me to gain my first hands-on experience with Python, MATLAB, and SolidWorks, culminating in a <strong>numerical simulation</strong> project modeling fire propagation in confined environments. Beyond academics, the military environment played a central role in shaping my mindset: through demanding collective activities, I developed strong <strong>teamwork and leadership</strong> abilities, and cultivated essential qualities such as perseverance, rigor, resilience, and decisiveness — values that continue to guide me in my engineering work.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Experience section -->
+    <!-- Experience -->
     <section id="experience" class="section">
       <div class="container">
-        <h2>Experience</h2>
+        <h2 class="reveal">Experience</h2>
 
-        <div class="timeline-item">
-          <h3>Turbomachinery Intern – <a href="https://web.fs.uni-lj.si/licem/" target="_blank"> Laboratory for Internal Combustion Engine and Electromobility</a></h3>
+        <article class="timeline-item reveal">
+          <h3>Turbomachinery Intern – <a href="https://web.fs.uni-lj.si/licem/" target="_blank" rel="noopener">Laboratory for Internal Combustion Engines and Electromobility</a></h3>
           <p class="meta">Ljubljana, Slovenia · May 2025 – August 2025</p>
-          <img src="images/apu_cad.png" 
-           alt="GTCP85-98D turbogenerator" 
-           class="experience-img"/>
-          <p>
-            This internship involved the design and implementation of experimental setups for aerospace applications. I participated to the developpement of a fully operational test bench for a Garrett GTCP85-98D Auxiliary Power Unit and designed the base elements of a large-scale Bunsen burner for research applications. The experience reinforced my skills in prototyping, troubleshooting, safety management, and dynamic system integration.
-          </p>
-          <ul>
-            <li>Designed and built a complete control panel for a Garrett GTCP85-98D turbogenerator, integrating power electronics, wiring, switchgear, and safety systems within a team of three researchers.</li>
-            <li>Performed thermodynamic assessments to evaluate the feasibility of indoor APU operation and exhaust evacuation.</li>
-            <li>Diagnosed and resolved fuel-system and communication issues affecting APU startup and stability.</li>
-            <li>Executed outdoor test campaigns to validate the APU’s operational behaviour and the control panel architecture.</li>
-            <li>Assisted in the dimensional sizing of a large-scale Bunsen burner intended for OH and CH radical measurements.</li>
-          </ul>
-          <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/apu_internship" target="_blank">View report and CAD on GitHub</a>
-              <!-- Optional: <a href="link-to-report.pdf" target="_blank">Read report</a> -->
-            </p>
-          </article>
-        </div>
+          <div class="experience-body">
+            <img src="images/apu_cad.png" alt="GTCP85-98D turbogenerator" class="experience-img" />
+            <div>
+              <p>
+                This internship involved the design and implementation of experimental setups for aerospace applications. I participated in the development of a fully operational test bench for a Garrett GTCP85-98D Auxiliary Power Unit and designed the base elements of a large-scale Bunsen burner for research applications. The experience reinforced my skills in prototyping, troubleshooting, safety management, and dynamic system integration.
+              </p>
+              <ul>
+                <li>Designed and built a complete control panel for a Garrett GTCP85-98D turbogenerator, integrating power electronics, wiring, switchgear, and safety systems within a team of three researchers.</li>
+                <li>Performed thermodynamic assessments to evaluate the feasibility of indoor APU operation and exhaust evacuation.</li>
+                <li>Diagnosed and resolved fuel-system and communication issues affecting APU startup and stability.</li>
+                <li>Executed outdoor test campaigns to validate the APU's operational behaviour and the control panel architecture.</li>
+                <li>Assisted in the dimensional sizing of a large-scale Bunsen burner intended for OH and CH radical measurements.</li>
+              </ul>
+              <p class="links">
+                <a href="https://github.com/VictorHelies/portfolio/tree/main/apu_internship" target="_blank" rel="noopener">View report and CAD on GitHub →</a>
+              </p>
+            </div>
+          </div>
+        </article>
 
-        <div class="timeline-item">
-          <h3>Parts control intern – <a href="https://ehm.bzh" target="_blank"> Efficient Hydrogen Motors</a></h3>
+        <article class="timeline-item reveal">
+          <h3>Parts Control Intern – <a href="https://ehm.bzh" target="_blank" rel="noopener">Efficient Hydrogen Motors</a></h3>
           <p class="meta">Chateaulin, France · January 2024 – February 2024</p>
-          <img src="images/e265.png" 
-           alt="Efficient Hydrogen Motors E265kW" 
-           style="width: 100%; border-radius: 8px; margin-bottom: 10px;"
-           class="experience-img"/>
-          <p>
-            Efficient Hydrogen Motors (EHM) is a young company developing hydrogen combustion engines for heavy-duty vehicles. I joined the team during the early stages of its development, working closely with engineers and technicians in a small R&D workshop environment.
-          </p>
-          <ul>
-            <li>Dimensional inspection of machined engine components using a 3D measurement system (Keyence XM) and conformity reporting. Configured parts into the Keyence software directly from ISO-128/ISO-2768 drawings.</li>
-            <li>Inventory and production support, including organisation of component databases and implementation of early workshop processes.</li>
-            <li>Assembly assistance and hands-on work with mechanical sub-systems.</li>
-            <li>Setup of an oil-pump test bench, involving mechanical integration, electrical wiring, troubleshooting of a 3-phased AC motor, and execution of performance tests.</li>
-          </ul>
-          <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/ehm_internship/Rapport de stage opérateur Victor HELIES.pdf" target="_blank">View report on GitHub (French)</a>
-              <!-- Optional: <a href="link-to-report.pdf" target="_blank">Read report</a> -->
-            </p>
-          </article>
-        </div>
+          <div class="experience-body">
+            <img src="images/e265.png" alt="Efficient Hydrogen Motors E265kW" class="experience-img" />
+            <div>
+              <p>
+                Efficient Hydrogen Motors (EHM) is a young company developing hydrogen combustion engines for heavy-duty vehicles. I joined the team during the early stages of its development, working closely with engineers and technicians in a small R&amp;D workshop environment.
+              </p>
+              <ul>
+                <li>Dimensional inspection of machined engine components using a 3D measurement system (Keyence XM) and conformity reporting. Configured parts into the Keyence software directly from ISO-128/ISO-2768 drawings.</li>
+                <li>Inventory and production support, including organisation of component databases and implementation of early workshop processes.</li>
+                <li>Assembly assistance and hands-on work with mechanical sub-systems.</li>
+                <li>Setup of an oil-pump test bench, involving mechanical integration, electrical wiring, troubleshooting of a 3-phased AC motor, and execution of performance tests.</li>
+              </ul>
+              <p class="links">
+                <a href="https://github.com/VictorHelies/portfolio/tree/main/ehm_internship/Rapport de stage opérateur Victor HELIES.pdf" target="_blank" rel="noopener">View report on GitHub (French) →</a>
+              </p>
+            </div>
+          </div>
+        </article>
 
-        <div class="timeline-item">
-              <h3>Sailing instructor – CNLoctudy</h3>
-              <p class="meta">Loctudy, France · Summers 2021 to 2024</p>
-              <img src="images/IMG_4330.JPG" 
-               alt="CNLoctudy's team" 
-               style="width: 100%; border-radius: 8px; margin-bottom: 10px;"
-               class="experience-img"/>
+        <article class="timeline-item reveal">
+          <h3>Sailing Instructor – CNLoctudy</h3>
+          <p class="meta">Loctudy, France · Summers 2021 to 2024</p>
+          <div class="experience-body">
+            <img src="images/IMG_4330.JPG" alt="CNLoctudy's team" class="experience-img" />
+            <div>
               <p>
                 I earned my sailing instructor qualification in 2021 at the club where I had been sailing since age 10, after volunteering there from 2017 to 2021. I also competed in several sailing disciplines, including the 2018 <strong>Open Bic World Championships</strong>, Laser, and windsurfing.
+              </p>
               <ul>
                 <li>Supervising trainees of all ages in various situations and weather conditions.</li>
                 <li>Teaching in French, English and German.</li>
@@ -212,62 +221,62 @@
                 <li>Applying theoretical and practical knowledge of aerodynamic phenomena in the context of sailing.</li>
                 <li>Gaining hands-on experience in outboard engine maintenance.</li>
               </ul>
-              </p>
-              </article>
             </div>
           </div>
-        </section>
-    
-    <!-- Projects section -->
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
     <section id="projects" class="section">
       <div class="container">
-        <h2>Projects</h2>
-        
-          <div class="cards">
+        <h2 class="reveal">Projects</h2>
+
+        <div class="cards">
           <!-- Project 1 -->
-          <article id="CAESAR-parts-design" class="card">
-            <img src="images/caesar.png" alt="CAESAR preview" class="card-img"/>
-            <h3>Craddle design for CAESAR artillery piece</h3>
+          <article id="CAESAR-parts-design" class="card reveal">
+            <div class="card-img-wrap"><img src="images/caesar.png" alt="CAESAR preview" class="card-img" /></div>
+            <h3>Cradle design for CAESAR artillery piece</h3>
             <p class="meta">University project · ENSTA 2025 · Abaqus, Catia, Python</p>
             <p>
               The cradle is the structural component connecting the chassis to the artillery barrel on the CAESAR self-propelled gun. This project was carried out by a two-student team under the guidance of engineers from KNDS (Nexter). Our primary challenge was the accurate modelling of welded joints subjected to dynamic and multi-directional loading. Because several aspects of the system are confidential, the report cannot be displayed here.
             </p>
             <ul>
-              <li>Determined load cases value from real-life measurements using Python algorithms including differential equations resolution.</li>
-              <li>Designed CAD models of the craddle with real-life assembly constrainsts consideration.</li>
+              <li>Determined load case values from real-life measurements using Python algorithms including differential equations resolution.</li>
+              <li>Designed CAD models of the cradle with real-life assembly constraints consideration.</li>
               <li>Performed finite element analysis of welded joints with validation based on FAT90 criteria.</li>
               <li>Conducted fatigue assessment of the design based on Manson–Coffin models following CETIM recommendations.</li>
             </ul>
             <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/caesar_project" target="_blank">View available parts of the report on GitHub</a>
-              <!-- <a href="https://your-demo-link.com" target="_blank">Live demo</a> -->
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/caesar_project" target="_blank" rel="noopener">View available parts of the report on GitHub →</a>
             </p>
           </article>
 
           <!-- Project 2 -->
-          <article id="Gearbox-robotization" class="card">
-            <h3>Robotization of a BMW 120D gearbox</h3>
+          <article id="Gearbox-robotization" class="card reveal">
+            <h3>Robotization of a BMW 120d gearbox</h3>
             <p class="meta">University project · ENSTA 2024 · Python, OnShape, Catia</p>
-            <img src="images/toraus_rpm_bmw.png" style="width: 27%; border-radius: 0.5rem; margin-bottom: 0.75rem; position: left;" alt="0 to 100 kph" class="card-img"/>
-            <img src="images/bmw120d.png" style="width: 27%; border-radius: 0.5rem; margin-bottom: 0.75rem; position: left;" alt="Gearbox robotization preview" class="card-img"/>
-            <img src="images/0_to_100_bmw.png" style="width: 27%; border-radius: 0.5rem; margin-bottom: 0.75rem; position: left;" alt="0 to 100 kph" class="card-img"/>
+            <div class="img-row">
+              <div class="card-img-wrap"><img src="images/toraus_rpm_bmw.png" alt="Engine RPM simulation" /></div>
+              <div class="card-img-wrap"><img src="images/bmw120d.png" alt="Gearbox robotization preview" /></div>
+              <div class="card-img-wrap"><img src="images/0_to_100_bmw.png" alt="0 to 100 kph performance graph" /></div>
+            </div>
             <p>
-              This project aimed to convert a manual BMW gearbox into an automated system using actuator-driven gear selection. Our team of four students divided responsibilities, and I was primarily in charge of CAD modelling and python-based simulations.
+              This project aimed to convert a manual BMW gearbox into an automated system using actuator-driven gear selection. Our team of four students divided responsibilities, and I was primarily in charge of CAD modelling and Python-based simulations.
             </p>
             <ul>
-              <li>Optimization of 0-100kph performance using Python.</li>
+              <li>Optimization of 0–100 kph performance using Python.</li>
               <li>Design of actuators on a simplified gearbox model using OnShape and Catia V5.</li>
-              <li>Improving efficiency using engine map based strategies on a Worldwide harmonized Light vehicles Test Procedure (WLTP) cycle.</li>
+              <li>Improving efficiency using engine-map-based strategies on a Worldwide harmonized Light vehicles Test Procedure (WLTP) cycle.</li>
             </ul>
             <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/gearbox_project" target="_blank">View report and programs on GitHub</a>
-              <!-- Optional: <a href="link-to-report.pdf" target="_blank">Read report</a> -->
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/gearbox_project" target="_blank" rel="noopener">View report and programs on GitHub →</a>
             </p>
           </article>
 
           <!-- Project 3 -->
-          <article id="USV-launch-system" class="card">
-            <img src="images/usv.png" alt="USV launch system preview" class="card-img"/>
+          <article id="USV-launch-system" class="card reveal">
+            <div class="card-img-wrap"><img src="images/usv.png" alt="USV launch system preview" class="card-img" /></div>
             <h3>USV launch system</h3>
             <p class="meta">University project · ENSTA 2024 · RDM7, Abaqus, Catia, Python</p>
             <p>
@@ -281,176 +290,172 @@
               <li>Conducted a frequency analysis of the USV support and balancing system to validate operability in Force 4 sea conditions.</li>
             </ul>
             <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/usv_project" target="_blank">View the report on GitHub</a>
-              <!-- <a href="https://your-demo-link.com" target="_blank">Live demo</a> -->
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/usv_project" target="_blank" rel="noopener">View the report on GitHub →</a>
             </p>
           </article>
 
           <!-- Project 4 -->
-          <article id="Fishing-gear" class="card">
-            <img src="images/baitcaster_cutout.png" alt="CAD model of the fishing reel" class="card-img"/>
+          <article id="Fishing-gear" class="card reveal">
+            <div class="card-img-wrap"><img src="images/baitcaster_cutout.png" alt="CAD model of the fishing reel" class="card-img" /></div>
             <h3>Low-hardware 3D-printed fishing reel</h3>
-            <p class="meta">Personnal project · 2025 · OnShape, Bambustudio</p>
+            <p class="meta">Personal project · 2025 · OnShape, Bambustudio</p>
             <p>
               I designed a fully 3D-printed baitcaster fishing reel in my free time using OnShape, focusing on super easy assembly with wedge-fit parts, a single ballpoint pen compression spring, and practical features like a 4:1 planetary gearset, automatic clutch, and adjustable disc brake; I now sell the files on Cults3D (5€) where they have already generated 60€ in passive income.
             </p>
             <ul>
-              <li>
-                I engineered every part to fit together using simple wedges and only one extra component—a standard ballpoint pen compression spring—so assembly stays clean, intuitive, and stress-free.
-              </li>
-              <li>
-                I created a clear assembly guide with a step-by-step tutorial and detailed print settings, helping you tune infill and orientation for better stress resistance on the most loaded parts.
-              </li>
-              <li>
-                I optimized the mechanics with a custom 4:1 planetary gearset, an automatic clutch that re-engages when cranking, and an adjustable disc brake, bringing real reel functionality to a fully printable design available on Cults3D (<a href="https://cults3d.com/:2030120" target="_blank">View the 3D-model's page</a>).
-              </li>
+              <li>I engineered every part to fit together using simple wedges and only one extra component — a standard ballpoint pen compression spring — so assembly stays clean, intuitive, and stress-free.</li>
+              <li>I created a clear assembly guide with a step-by-step tutorial and detailed print settings, helping you tune infill and orientation for better stress resistance on the most loaded parts.</li>
+              <li>I optimized the mechanics with a custom 4:1 planetary gearset, an automatic clutch that re-engages when cranking, and an adjustable disc brake, bringing real reel functionality to a fully printable design available on Cults3D (<a href="https://cults3d.com/:2030120" target="_blank" rel="noopener">view the 3D-model's page</a>).</li>
             </ul>
             <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/low_hardware_fishing_reel" target="_blank">View the STL files and assembly guide on GitHub</a>
-              <!-- <a href="https://your-demo-link.com" target="_blank">Live demo</a> -->
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/low_hardware_fishing_reel" target="_blank" rel="noopener">View the STL files and assembly guide on GitHub →</a>
             </p>
           </article>
 
           <!-- Project 5 -->
-          <article id="FPV-drone" class="card">
-            <h3>4k FPV drone</h3>
-            <p class="meta">Personnal project · 2025 · OnShape, Bambustudio, CAEplex</p>
-            <img src="images/cetusXfea.png" style="width: 60%; border-radius: 0.5rem; margin-bottom: 0.75rem; position: left;" alt="Finite Element Analysis of the frame" class="card-img"/>
-            <img src="images/4k_drone.jpg" style="width: 30%; border-radius: 0.5rem; margin-bottom: 0.75rem; position: right;" alt="Picture of the drone" class="card-img"/>
-
+          <article id="FPV-drone" class="card reveal">
+            <h3>4K FPV drone</h3>
+            <p class="meta">Personal project · 2025 · OnShape, Bambustudio, CAEplex</p>
+            <div class="img-row two-one">
+              <div class="card-img-wrap"><img src="images/cetusXfea.png" alt="Finite Element Analysis of the frame" /></div>
+              <div class="card-img-wrap"><img src="images/4k_drone.jpg" alt="Picture of the drone" /></div>
+            </div>
             <p>
               I developed a fully custom ultralight drone frame designed to carry standard FPV components and a 4K action camera for event-filming applications. The airframe is compact enough for safe indoor flights yet powerful and stable in outdoor environments.
-              To optimize performance, I used finite element analysis (FEA) to increase structural stiffness and durability while minimizing mass. The final frame weighs 50 g, meeting my design target of <55 g to maximize flight time with dual 550 mAh 1S LiPos, and remaining safely under the 250 g EU regulatory limit.
+              To optimize performance, I used finite element analysis (FEA) to increase structural stiffness and durability while minimizing mass. The final frame weighs 50 g, meeting my design target of &lt;55 g to maximize flight time with dual 550 mAh 1S LiPos, and remaining safely under the 250 g EU regulatory limit.
               The frame integrates several functional features:
-              </p>
-              <ul>
+            </p>
+            <ul>
               <li>Thermal-management grid on the top plate, added after diagnosing overheating during a concert shoot.</li>
               <li>Dedicated mount for a RunCam Thumb Pro W 4K camera.</li>
               <li>Clean component layout for motors, flight controller, FPV system, and power distribution.</li>
-              </ul>
-            <img src="images/cetusXcad.png" style="width: 80%; border-radius: 0.5rem; margin-bottom: 0.75rem; position: center;" alt="CAD model of the drone" class="card-img"/>
-              <p>
-              I built this setup to achieve professional-grade footage at minimal cost (~220€ total compared to nearly 1000€ for commercial alternatives such as the DJI Avata or BetaFPV Pavo Pico). The drone has been flown successfully at events including concerts, fashion shows, hotel venues, and rallies. The video below is a compilation of clips I filmed.            
+            </ul>
+            <div class="card-img-wrap"><img src="images/cetusXcad.png" alt="CAD model of the drone" class="card-img" /></div>
+            <p>
+              I built this setup to achieve professional-grade footage at minimal cost (~220€ total compared to nearly 1000€ for commercial alternatives such as the DJI Avata or BetaFPV Pavo Pico). The drone has been flown successfully at events including concerts, fashion shows, hotel venues, and rallies. The video below is a compilation of clips I filmed.
             </p>
-             <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; margin-bottom: 10px;">
+            <div class="video-wrap">
               <iframe
                 src="https://www.youtube.com/embed/dd-QNFGnd4s"
+                title="FPV drone footage compilation"
                 frameborder="0"
-                allowfullscreen
-                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 10px;">
-              </iframe>
+                allowfullscreen></iframe>
             </div>
             <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/FPV_drone" target="_blank">Download the CAD files on GitHub</a>
-              <!-- <a href="https://your-demo-link.com" target="_blank">Live demo</a> -->
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/FPV_drone" target="_blank" rel="noopener">Download the CAD files on GitHub →</a>
             </p>
-
           </article>
 
           <!-- Project 6 -->
-          <article id="Job-Application-Assistant" class="card">
-            <img src="images/job_application_assistant_cutout.png" alt="Screenshot of the Job Application Assistant GUI" class="card-img"/>
+          <article id="Job-Application-Assistant" class="card reveal">
+            <div class="card-img-wrap"><img src="images/job_application_assistant_cutout.png" alt="Screenshot of the Job Application Assistant GUI" class="card-img" /></div>
             <h3>Supervised Job Application Assistant (AI + Word/Outlook automation)</h3>
             <p class="meta">Personal productivity tool · 2025 · Python, PySide6, OpenAI API, Microsoft Word/Outlook (COM)</p>
-          
             <p>
-              I built this program with the help of ChatGPT in order to reduce the daily time I spent sending unsolicited applications (tailoring a resume title/summary/skills, writing a cover letter, exporting PDFs, drafting an email, attaching documents, and tracking who I already contacted). 
-              The app keeps a “human-in-the-loop” workflow: it generates company-specific content, lets me review/edit it, produces the PDFs automatically, then drafts (or sends) the email through Outlook, while logging every application to avoid duplicates. I finally gave up on using this project for internship applications because the emails/cover letters seemed too "AI-generated"..
+              I built this program with the help of ChatGPT in order to reduce the daily time I spent sending unsolicited applications (tailoring a resume title/summary/skills, writing a cover letter, exporting PDFs, drafting an email, attaching documents, and tracking who I already contacted).
+              The app keeps a "human-in-the-loop" workflow: it generates company-specific content, lets me review/edit it, produces the PDFs automatically, then drafts (or sends) the email through Outlook, while logging every application to avoid duplicates. I finally gave up on using this project for internship applications because the emails/cover letters seemed too "AI-generated"…
             </p>
-          
             <ul>
-              <li>
-                <strong>Supervised workflow (one company at a time):</strong>
-                I designed the UI so each application follows the same controlled pipeline : Generate → Review → Approve documents → Approve email, keeping quality high while removing repetitive manual steps.
-              </li>
-              <li>
-                <strong>Structured AI outputs (reliable automation):</strong>
-                The app calls the OpenAI API and requests a strict, schema-validated response (resume title, 3–4 sentence profile summary, exactly 4 skills, cover letter, and cold email), so document generation is deterministic and easy to validate before sending.
-              </li>
-              <li>
-                <strong>Automated document + email production:</strong>
-                Once approved, the tool fills Word templates (resume + cover letter), converts them to PDF, and creates an Outlook draft (or sends) with both attachments, saving time while preserving the exact formatting I want.
-              </li>
-              <li>
-                <strong>Duplicate-application protection:</strong>
-                Every application is recorded in a CSV “database” (company name, email, URL, date, status). If the same company/email appears again, the app warns me and asks whether to continue, preventing accidental double-contacting.
-              </li>
+              <li><strong>Supervised workflow (one company at a time):</strong> I designed the UI so each application follows the same controlled pipeline: Generate → Review → Approve documents → Approve email, keeping quality high while removing repetitive manual steps.</li>
+              <li><strong>Structured AI outputs (reliable automation):</strong> The app calls the OpenAI API and requests a strict, schema-validated response (resume title, 3–4 sentence profile summary, exactly 4 skills, cover letter, and cold email), so document generation is deterministic and easy to validate before sending.</li>
+              <li><strong>Automated document + email production:</strong> Once approved, the tool fills Word templates (resume + cover letter), converts them to PDF, and creates an Outlook draft (or sends) with both attachments, saving time while preserving the exact formatting I want.</li>
+              <li><strong>Duplicate-application protection:</strong> Every application is recorded in a CSV "database" (company name, email, URL, date, status). If the same company/email appears again, the app warns me and asks whether to continue, preventing accidental double-contacting.</li>
             </ul>
-          
             <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/job_application_automatio_software" target="_blank">Download the app (zip) on GitHub</a>
-              <!-- <a href="https://your-demo-link.com" target="_blank">Live demo</a> -->
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/job_application_automatio_software" target="_blank" rel="noopener">Download the app (zip) on GitHub →</a>
             </p>
           </article>
-
-            
-          <!-- Add more projects as needed -->
         </div>
       </div>
     </section>
 
-    <!-- Contact section -->
+    <!-- Contact -->
     <section id="contact" class="section">
       <div class="container">
-        <h2>Contact</h2>
-        <p>
-          I'm open to internship and job opportunities in France, Europe and Worldwide.
-          The best way to reach me is by email or LinkedIn.
-        </p>
-        <ul class="contact-list">
-          <li>Email: <a href="victor.helies@ensta.fr">victor.helies@ensta.fr</a></li>
-          <li>LinkedIn: <a href="https://www.linkedin.com/in/victor-helies" target="_blank">victor-helies</a></li>
-        </ul>
+        <h2 class="reveal">Contact</h2>
+        <div class="reveal">
+          <p>
+            I'm open to internship and job opportunities in France, Europe and Worldwide.
+            The best way to reach me is by email or LinkedIn.
+          </p>
+          <ul class="contact-list">
+            <li><span class="fact-label">Email</span> <a href="mailto:victor.helies@ensta.fr">victor.helies@ensta.fr</a></li>
+            <li><span class="fact-label">LinkedIn</span> <a href="https://www.linkedin.com/in/victor-helies" target="_blank" rel="noopener">victor-helies</a></li>
+          </ul>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="container">
-      <p>© Victor Héliès – 2025</p>
+      <p>© Victor Héliès – 2026</p>
     </div>
   </footer>
 
   <script>
+    // ---------- Slideshow (crossfade + slow zoom) ----------
     const slides = document.querySelectorAll("#slideshow .slide");
     let currentIndex = 0;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (slides.length > 0) {
       slides[currentIndex].classList.add("active");
-
-      setInterval(() => {
-        slides[currentIndex].classList.remove("active");
-        currentIndex = (currentIndex + 1) % slides.length;
-        slides[currentIndex].classList.add("active");
-      }, 3500);
+      if (!reduceMotion) {
+        setInterval(() => {
+          slides[currentIndex].classList.remove("active");
+          currentIndex = (currentIndex + 1) % slides.length;
+          slides[currentIndex].classList.add("active");
+        }, 4000);
+      }
     }
-  </script>
-  <script>
-  const dropdown = document.querySelector('.dropdown');
-  const dropbtn = document.querySelector('.dropbtn');
 
-  // Toggle dropdown when clicking "Projects ▾"
-  dropbtn.addEventListener('click', function (e) {
-    e.stopPropagation(); // prevent click from bubbling to document
-    dropdown.classList.toggle('open');
-  });
+    // ---------- Scroll reveal ----------
+    const revealEls = document.querySelectorAll(".reveal");
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      );
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add("visible"));
+    }
 
-  // Close dropdown when clicking anywhere else
-  document.addEventListener('click', function () {
-    dropdown.classList.remove('open');
-  });
+    // ---------- Top bar shadow on scroll ----------
+    const topbar = document.getElementById("topbar");
+    window.addEventListener("scroll", () => {
+      topbar.classList.toggle("scrolled", window.scrollY > 10);
+    }, { passive: true });
 
-  // Close dropdown when a project is selected
-  document.querySelectorAll('.dropdown-content a').forEach(link => {
-    link.addEventListener('click', function () {
-      dropdown.classList.remove('open');
+    // ---------- Projects dropdown ----------
+    const dropdown = document.querySelector(".dropdown");
+    const dropbtn = document.querySelector(".dropbtn");
+
+    dropbtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      const open = dropdown.classList.toggle("open");
+      dropbtn.setAttribute("aria-expanded", open);
     });
-  });
-</script>
 
+    document.addEventListener("click", function () {
+      dropdown.classList.remove("open");
+      dropbtn.setAttribute("aria-expanded", "false");
+    });
+
+    document.querySelectorAll(".dropdown-content a").forEach((link) => {
+      link.addEventListener("click", function () {
+        dropdown.classList.remove("open");
+        dropbtn.setAttribute("aria-expanded", "false");
+      });
+    });
+  </script>
 </body>
-</html>
-
-</body>
-
 </html>
