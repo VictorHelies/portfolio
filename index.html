@@ -5,6 +5,8 @@
   <title>Victor Héliès – Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Portfolio of Victor Héliès: professional experiences, university projects, and other personal projects." />
+  <link rel="alternate" hreflang="en" href="https://victorhelies.github.io/portfolio/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://victorhelies.github.io/portfolio/index-fr.html" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -33,6 +35,10 @@
           </div>
         </div>
         <a href="#contact">Contact</a>
+        <div class="lang-switch" aria-label="Language selection">
+          <a href="index.html" class="active" aria-current="page">EN</a>
+          <a href="index-fr.html" lang="fr" hreflang="fr">FR</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -349,33 +355,32 @@
 
           <!-- Project 6 -->
           <article id="Job-Application-Assistant" class="card reveal">
-            <div class="card-img-wrap"><img src="images/job_application_assistant_cutout.png" alt="Screenshot of the Job Application Assistant GUI" class="card-img" /></div>
-            <h3>Supervised Job Application Assistant (AI + Word/Outlook automation)</h3>
-            <p class="meta">Personal productivity tool · 2025 · Python, PySide6, OpenAI API, Microsoft Word/Outlook (COM)</p>
+            <div class="card-img-wrap"><img src="images/job_application_assistant_cutout.png" alt="Screenshot of the JobPilot interface" class="card-img" /></div>
+            <h3>JobPilot – Supervised job application platform (AI + automation)</h3>
+            <p class="meta">Personal productivity tool · 2025-2026 · Python, FastAPI, SQLite, Playwright, Claude API, PWA</p>
             <p>
-              I built this program with the help of ChatGPT in order to reduce the daily time I spent sending unsolicited applications (tailoring a resume title/summary/skills, writing a cover letter, exporting PDFs, drafting an email, attaching documents, and tracking who I already contacted).
-              The app keeps a “human-in-the-loop” workflow: it generates company-specific content, lets me review/edit it, produces the PDFs automatically, then drafts (or sends) the email through Outlook, while logging every application to avoid duplicates. I finally gave up on using this project for internship applications because the emails/cover letters seemed too "AI-generated"..
+              JobPilot is the successor of my first job application assistant (a PySide6 + Word/Outlook desktop tool). It is a local web platform that manages the whole cold-application pipeline: it collects offers from company career sites, scores them against my profile, generates tailored documents, and can even fill application forms, while keeping me in the loop at every important step.
             </p>
             <ul>
               <li>
-                <strong>Supervised workflow (one company at a time):</strong>
-                I designed the UI so each application follows the same controlled pipeline : Generate → Review → Approve documents → Approve email, keeping quality high while removing repetitive manual steps.
+                <strong>Offer collection and scoring:</strong>
+                Custom scrapers (LinkedIn, Workday-based portals, Safran, Naval Group, Tesla...) feed a local SQLite database, and each offer is scored with a strengths/gaps summary so I can prioritize the best matches.
               </li>
               <li>
-                <strong>Structured AI outputs (reliable automation):</strong>
-                The app calls the OpenAI API and requests a strict, schema-validated response (resume title, 3–4 sentence profile summary, exactly 4 skills, cover letter, and cold email), so document generation is deterministic and easy to validate before sending.
+                <strong>Tailored one-page documents:</strong>
+                Resume templates are plain Word files containing {{placeholders}} written in natural language; an LLM fills them for each offer (French/English, with/without photo) and writes a cover letter, then everything is exported to PDF with a guaranteed one-page resume, following a generate → review → approve workflow.
               </li>
               <li>
-                <strong>Automated document + email production:</strong>
-                Once approved, the tool fills Word templates (resume + cover letter), converts them to PDF, and creates an Outlook draft (or sends) with both attachments, saving time while preserving the exact formatting I want.
+                <strong>Supervised form filling (autoapply):</strong>
+                A recon step maps careers pages and identifies the ATS behind them, then Playwright fills the application forms. A review mode lets me check and submit each application myself; a rate-limited automatic mode is restricted to well-supported ATS platforms, every ambiguous question is raised as an exception instead of being guessed, and each submission is screenshotted.
               </li>
               <li>
-                <strong>Duplicate-application protection:</strong>
-                Every application is recorded in a CSV “database” (company name, email, URL, date, status). If the same company/email appears again, the app warns me and asks whether to continue, preventing accidental double-contacting.
+                <strong>Offline-first mobile app:</strong>
+                A PWA served by the backend lets me review and sort offers from my phone even when the laptop is off; decisions are queued locally and synced back at the next connection.
               </li>
             </ul>
             <p class="links">
-              <a href="https://github.com/VictorHelies/portfolio/tree/main/job_application_automatio_software" target="_blank" rel="noopener">Download the app (zip) on GitHub</a>
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/jobpilot" target="_blank" rel="noopener">View the project on GitHub</a>
             </p>
           </article>
         </div>
