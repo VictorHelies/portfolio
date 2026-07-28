@@ -735,3 +735,55 @@ nav a:hover {
     padding: 1.25rem 1.25rem 1rem;
   }
 }
+
+/* ==========================================================
+   Institution logos in education cards
+   Append this block to the end of styles.css
+   ========================================================== */
+
+.edu-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.edu-logo {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  /* keeps dark logos readable if the card background is tinted */
+  background: transparent;
+}
+
+.edu-head-text {
+  min-width: 0;
+}
+
+/* neutralise the default card heading spacing inside the flex header */
+.edu-head h3,
+.edu-head .meta {
+  margin: 0;
+}
+
+.edu-head .meta {
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .edu-head {
+    gap: 0.75rem;
+  }
+  .edu-logo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* Optional: if your site ever gets a dark mode, uncomment to keep
+   single-colour logos visible on dark backgrounds.
+@media (prefers-color-scheme: dark) {
+  .edu-logo { filter: brightness(0) invert(1); }
+}
+*/
