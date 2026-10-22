@@ -31,6 +31,7 @@
             <a href="#USV-launch-system">Système de mise à l'eau d'USV</a>
             <a href="#Fishing-gear">Matériel de pêche</a>
             <a href="#FPV-drone">Drone FPV 4k</a>
+            <a href="#Drone-18650">Drone longue portée 18650</a>
             <a href="#Job-Application-Assistant">Logiciel de candidatures</a>
           </div>
         </div>
@@ -392,6 +393,28 @@
             <p class="links">
               <a href="https://github.com/VictorHelies/portfolio/tree/main/FPV_drone" target="_blank" rel="noopener">Télécharger les fichiers CAO sur GitHub</a>
             </p>
+          </article>
+
+          <article id="Drone-18650" class="card reveal">
+            <h3>Drone FPV longue portée 18650</h3>
+            <p class="meta">Projet personnel · 2026 · OnShape, Bambu Studio, Betaflight, Python</p>
+            <div class="img-row two-one">
+              <div class="card-img-wrap"><img src="18650_drone/media/front.jpg" alt="Le drone 18650 vu de face" /></div>
+              <div class="card-img-wrap"><img src="18650_drone/media/cad_render.jpg" alt="Modèle CAO du drone 18650" /></div>
+            </div>
+            <p>
+              J'ai conçu un drone FPV 3 pouces de 130 g qui vole 10 minutes sur une seule cellule Li-ion 18650, transmet une vidéo numérique 1080p et suit des points de passage GPS. Il répond à deux missions où mon ancien drone avait échoué : filmer mes amis au ski dans le froid, et atteindre une côte où le décollage est interdit. Caméra, GPS et liaison vidéo tiennent dans un châssis imprimé en 3D qui se range dans un sac à dos.
+            </p>
+            <ul>
+              <li>Choix d'une seule cellule 18650 pour sa densité d'énergie : 232 Wh/kg, contre 149 Wh/kg pour une LiPo 1S classique.</li>
+              <li>Conception du châssis dans OnShape autour de l'électronique, avec une caméra tenue par des ressorts imprimés qui filtrent les vibrations.</li>
+              <li>Développement d'un simulateur qui fait tourner le vrai firmware Betaflight 2026.6 face à un modèle physique du drone, pour répéter les missions en sécurité.</li>
+              <li>Décodage en Python des données de vol issues des enregistrements vidéo, qui a permis de relier les montées brutales à la régulation d'altitude du pilote automatique.</li>
+            </ul>
+            <div class="hero-links" style="margin-top:1rem">
+              <a href="18650_drone/index-fr.html" class="btn primary">Lire toute l'histoire</a>
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/18650_drone" target="_blank" rel="noopener" class="btn">CAO et code sur GitHub</a>
+            </div>
           </article>
 
           <!-- Projet 6 -->

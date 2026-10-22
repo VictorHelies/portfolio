@@ -31,6 +31,7 @@
             <a href="#USV-launch-system">USV launch system</a>
             <a href="#Fishing-gear">Fishing gear</a>
             <a href="#FPV-drone">4k FPV drone</a>
+            <a href="#Drone-18650">18650 long-range drone</a>
             <a href="#Job-Application-Assistant">Job Application Software</a>
           </div>
         </div>
@@ -392,6 +393,28 @@
             <p class="links">
               <a href="https://github.com/VictorHelies/portfolio/tree/main/FPV_drone" target="_blank" rel="noopener">Download the CAD files on GitHub</a>
             </p>
+          </article>
+
+          <article id="Drone-18650" class="card reveal">
+            <h3>18650 long-range FPV drone</h3>
+            <p class="meta">Personal project · 2026 · OnShape, Bambu Studio, Betaflight, Python</p>
+            <div class="img-row two-one">
+              <div class="card-img-wrap"><img src="18650_drone/media/front.jpg" alt="The 18650 drone seen from the front" /></div>
+              <div class="card-img-wrap"><img src="18650_drone/media/cad_render.jpg" alt="CAD model of the 18650 drone" /></div>
+            </div>
+            <p>
+              I designed a 130 g, 3-inch FPV drone that flies 10 minutes on a single Li-ion 18650 cell, streams 1080p digital video and follows GPS waypoints. It answers two missions my old drone failed: filming friends skiing in the cold, and reaching a coast where take-off is forbidden. Camera, GPS and video link all fit inside a 3D-printed frame that goes in a backpack.
+            </p>
+            <ul>
+              <li>Chose a single 18650 cell for its energy density: 232 Wh/kg, against 149 Wh/kg for a typical 1S LiPo.</li>
+              <li>Designed the frame in OnShape around the electronics, with a camera held by printed springs that filter vibrations.</li>
+              <li>Built a simulator running the real Betaflight 2026.6 firmware against a physics model of the drone, to rehearse waypoint missions safely.</li>
+              <li>Decoded the flight data from the video recordings in Python, and traced sudden climbs to the autopilot's altitude control.</li>
+            </ul>
+            <div class="hero-links" style="margin-top:1rem">
+              <a href="18650_drone/index.html" class="btn primary">Read the full story</a>
+              <a href="https://github.com/VictorHelies/portfolio/tree/main/18650_drone" target="_blank" rel="noopener" class="btn">CAD and code on GitHub</a>
+            </div>
           </article>
 
           <!-- Project 6 -->
