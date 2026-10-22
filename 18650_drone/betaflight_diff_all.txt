@@ -1,8 +1,8 @@
 # diff all
 
 # version
-# Betaflight / STM32F405 (F405) 2025.12.2 May 26 2026 / 07:39:36 (79065c96b) MSP API: 1.47
-# config rev: e378347
+# Betaflight / STM32F405 (F405) 2026.6.2 Oct 19 2026 / 09:54:05 (e0b7bb01b) MSP API: 1.48
+# config rev: 3a406c5
 
 # start the command batch
 batch start
@@ -13,7 +13,7 @@ defaults nosave
 board_name FLYWOOF405S_AIO
 manufacturer_id FLWO
 mcu_id 0040005a3235511133323831
-signature
+signature 
 
 # feature
 feature GPS
@@ -33,16 +33,24 @@ led 2 10,8::CB:8
 led 3 11,8::CB:8
 
 # aux
-aux 0 0 0 1600 2100 0 0
+aux 0 0 0 1675 2100 0 0
 aux 1 1 1 1675 2100 0 0
-aux 2 27 2 1500 2100 0 0
-aux 3 46 3 1500 2100 0 0
-aux 4 13 4 1500 2100 0 0
+aux 2 11 2 1300 1700 0 0
+aux 3 46 3 1600 2100 0 0
+aux 4 56 2 1750 2100 0 0
+aux 5 13 4 1600 2100 0 0
+waypoint clear
+waypoint insert 0 47.9111150 -4.2658380 8534 514 FLYOVER 0 ORBIT
+waypoint insert 1 47.9117610 -4.2647760 8534 514 FLYBY 0 ORBIT
+waypoint insert 2 47.9125560 -4.2630170 8534 514 FLYBY 0 ORBIT
+waypoint insert 3 47.9137400 -4.2634020 8534 514 FLYBY 0 ORBIT
+waypoint insert 4 47.9125820 -4.2657340 8534 514 FLYBY 0 ORBIT
+waypoint insert 5 47.9111940 -4.2659090 8534 514 HOLD 0 ORBIT
 
 # master
 set dyn_notch_count = 1
 set dyn_notch_q = 500
-set acc_calibration = -19,-2,-24,1
+set acc_calibration = 53,-20,-18,1
 set mag_hardware = NONE
 set blackbox_sample_rate = 1/1
 set blackbox_device = NONE
@@ -52,17 +60,14 @@ set motor_pwm_protocol = DSHOT300
 set motor_poles = 12
 set failsafe_procedure = GPS-RESCUE
 set align_board_yaw = 90
-set bat_capacity = 4000
-set vbat_max_cell_voltage = 415
-set vbat_min_cell_voltage = 250
-set vbat_warning_cell_voltage = 300
 set ibata_scale = 553
 set gps_auto_baud = ON
 set gps_ublox_use_galileo = ON
 set gps_set_home_point_once = ON
+set gps_rescue_alt_mode = FIXED_ALT
 set gps_rescue_ascend_rate = 450
 set gps_rescue_ground_speed = 500
-set gps_rescue_allow_arming_without_fix = ON
+set gps_rescue_sanity_checks = RESCUE_SANITY_ON
 set pid_process_denom = 2
 set osd_vbat_pos = 14849
 set osd_rssi_dbm_pos = 14881
@@ -83,6 +88,8 @@ set osd_core_temp_pos = 1262
 set osd_sys_vtx_temp_pos = 1230
 set osd_stat_bitmask = 4208428
 set ap_hover_throttle = 1450
+set ap_throttle_max = 1750
+set ap_max_distance_from_home = 600
 
 profile 0
 
@@ -114,7 +121,7 @@ profile 2
 profile 3
 
 # restore original profile selection
-profile 0
+profile 2
 
 rateprofile 0
 
@@ -134,9 +141,24 @@ rateprofile 2
 
 rateprofile 3
 
+battery_profile 0
+
+# battery_profile 0
+set bat_capacity = 3000
+set vbat_max_cell_voltage = 415
+set vbat_min_cell_voltage = 250
+set vbat_warning_cell_voltage = 300
+
+battery_profile 1
+
+battery_profile 2
+
 # restore original rateprofile selection
-rateprofile 0
+rateprofile 2
+
+# restore original battery_profile selection
+battery_profile 0
 
 # save configuration
 save
-#
+# 
