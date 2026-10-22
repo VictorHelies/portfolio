@@ -1,0 +1,385 @@
+/* ============================================================
+   18650 drone – project page additions
+   Loaded after ../styles.css; reuses its tokens (--accent, --line…)
+   ============================================================ */
+
+.project-hero {
+  padding: 4rem 0 2rem;
+}
+
+.project-hero h1 {
+  font-weight: 800;
+  font-size: clamp(2rem, 4.6vw, 2.9rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  margin-bottom: 1rem;
+  max-width: 22ch;
+}
+
+.project-hero .lead {
+  font-size: 1.12rem;
+  font-weight: 600;
+  max-width: 62ch;
+  margin-bottom: 0.75rem;
+}
+
+.project-hero p {
+  max-width: 66ch;
+  margin-bottom: 0.75rem;
+}
+
+.spec-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 1.25rem 2rem;
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+/* Hero video */
+.hero-video {
+  width: min(92%, 1100px);
+  margin: 0 auto 1rem;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  background: #0e1014;
+  aspect-ratio: 16 / 9;
+}
+
+.hero-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+/* Sections */
+.section h3 {
+  font-weight: 800;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  margin: 2rem 0 0.6rem;
+}
+
+.section .lead {
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.section ol {
+  margin: 0.25rem 0 1rem;
+  padding-left: 1.4rem;
+}
+
+.section ol li {
+  margin-bottom: 0.35rem;
+}
+
+.section + .section {
+  border-top: 1px solid var(--line);
+}
+
+/* Figures */
+.fig {
+  margin: 1.25rem 0 1.5rem;
+}
+
+.fig img,
+.fig video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  background: var(--surface);
+}
+
+.fig figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+
+.fig-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.fig-row.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.fig-row .fig {
+  margin: 0;
+}
+
+.fig-row .fig img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.fig-row.portrait .fig img {
+  aspect-ratio: 3 / 4;
+}
+
+.fig.narrow {
+  max-width: 640px;
+}
+
+/* Charts and diagrams drawn as inline SVG */
+.chart {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.25rem 0.75rem;
+  box-shadow: var(--shadow-sm);
+  margin: 1.25rem 0 1.5rem;
+}
+
+.chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  font-family: var(--font-body);
+}
+
+.chart figcaption {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 0.4rem;
+}
+
+/* Tables */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.data-table th {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  background: #fafafa;
+}
+
+.data-table tr:last-child td {
+  border-bottom: none;
+}
+
+.data-table td.num {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-table tr.highlight td {
+  background: var(--accent-tint);
+}
+
+.table-note {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: -0.9rem;
+}
+
+/* Status pills in the results table */
+.pill {
+  display: inline-block;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.pill.met {
+  background: var(--accent);
+  color: #fff;
+}
+
+.pill.partly {
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+/* "Why" blocks */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.why-grid .card h3 {
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+}
+
+.why-grid .card ul {
+  margin-bottom: 0;
+}
+
+/* Requirements list */
+.req-list {
+  counter-reset: req;
+  list-style: none;
+  padding-left: 0 !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem 1.5rem;
+}
+
+.req-list li {
+  counter-increment: req;
+  display: flex;
+  gap: 0.7rem;
+  align-items: baseline;
+}
+
+.req-list li::before {
+  content: counter(req);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  flex: 0 0 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 3D viewer */
+.viewer {
+  position: relative;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: #ffffff;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+  margin: 1.25rem 0 0.5rem;
+}
+
+.viewer model-viewer {
+  width: 100%;
+  height: 460px;
+  --poster-color: transparent;
+}
+
+.viewer-hint {
+  position: absolute;
+  left: 1rem;
+  bottom: 0.8rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  pointer-events: none;
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--accent-tint);
+  color: var(--accent-dark);
+  padding: 0.05rem 0.35rem;
+  border-radius: 4px;
+}
+
+.downloads {
+  list-style: none;
+  padding-left: 0 !important;
+}
+
+.downloads li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--line);
+  margin: 0 !important;
+}
+
+.downloads .size {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.back-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .project-hero {
+    padding: 2.25rem 0 1.5rem;
+  }
+
+  .hero-video {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  .fig-row,
+  .fig-row.three,
+  .why-grid,
+  .req-list {
+    grid-template-columns: 1fr;
+  }
+
+  .viewer model-viewer {
+    height: 340px;
+  }
+
+  /* keep chart labels readable: scroll sideways instead of shrinking */
+  .chart {
+    overflow-x: auto;
+    padding: 1rem 0.75rem 0.5rem;
+  }
+
+  .chart svg {
+    min-width: 620px;
+  }
+
+  .data-table {
+    font-size: 0.84rem;
+  }
+}

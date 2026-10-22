@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>18650 long-range FPV drone – Victor Héliès</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A 130 g, 3-inch FPV drone that flies 10 minutes on a single Li-ion 18650 cell, streams 1080p digital video and follows GPS waypoints." />
+  <meta property="og:title" content="18650 long-range FPV drone – Victor Héliès" />
+  <meta property="og:description" content="A 130 g, 3-inch FPV drone that flies 10 minutes on a single Li-ion 18650 cell, streams 1080p digital video and follows GPS waypoints." />
+  <meta property="og:image" content="https://victorhelies.github.io/portfolio/18650_drone/media/presentation_poster.jpg" />
+  <link rel="alternate" hreflang="en" href="https://victorhelies.github.io/portfolio/18650_drone/index.html" />
+  <link rel="alternate" hreflang="fr" href="https://victorhelies.github.io/portfolio/18650_drone/index-fr.html" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="page.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@4.0.0/dist/model-viewer.min.js"></script>
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="13dfb3e0-6b2c-4b80-9522-8ed5c5b0965f"></script>
+</head>
+<body>
+  <header class="top-bar" id="topbar">
+    <div class="container top-bar-inner">
+      <a href="../index.html" class="logo">Victor Héliès</a>
+      <nav aria-label="Main navigation">
+        <a href="../index.html#Drone-18650" class="back-link">← Portfolio</a>
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">Sections <span class="arrow">▾</span></button>
+          <div class="dropdown-content"><a href="#story">Story</a><a href="#design">Design choices</a><a href="#hardware">Hardware</a><a href="#cad">Frame & CAD</a><a href="#software">Software</a><a href="#simulator">Simulator</a><a href="#testing">Field testing</a><a href="#results">Results</a><a href="#downloads">Downloads</a></div>
+        </div>
+        <div class="lang-switch" aria-label="Language selection">
+          <a href="index.html" class="active" aria-current="page">EN</a>
+          <a href="index-fr.html" lang="fr" hreflang="fr">FR</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="project-hero">
+      <div class="container">
+        <p class="eyebrow anim anim-1">Personal project · 2026 · OnShape, Bambu Studio, Betaflight 2026.6, Python</p>
+        <h1 class="anim anim-2">18650 long-range FPV drone</h1>
+        <p class="lead anim anim-3">A 130 g, 3-inch FPV drone that flies 10 minutes on a single Li-ion 18650 cell, streams 1080p digital video and follows GPS waypoints.</p>
+        <p class="anim anim-3">I designed it to film my friends in the mountains and to reach a stretch of coast where take-off is forbidden. Everything is built in: camera, GPS and video link fit inside a 3D-printed frame that goes in a backpack.</p>
+        <div class="hero-links anim anim-4"><a href="#story" class="btn primary">Read the story</a><a href="#cad" class="btn">Explore the 3D model</a><a href="#downloads" class="btn">Download CAD</a></div>
+        <div class="spec-strip anim anim-5"><div class="fact"><span class="fact-label">Take-off mass</span><span class="fact-value">130 g</span></div><div class="fact"><span class="fact-label">Props</span><span class="fact-value">3-inch</span></div><div class="fact"><span class="fact-label">Battery</span><span class="fact-value">1S Sony VTC6</span></div><div class="fact"><span class="fact-label">Flight time</span><span class="fact-value">10 min, 3.2 V left</span></div><div class="fact"><span class="fact-label">Video</span><span class="fact-value">1080p digital</span></div><div class="fact"><span class="fact-label">Navigation</span><span class="fact-value">GPS rescue + waypoints</span></div><div class="fact"><span class="fact-label">Parts</span><span class="fact-value">≈ 200 €</span></div></div>
+      </div>
+    </section>
+
+    <div class="hero-video anim anim-5">
+      <video src="media/presentation.mp4" poster="media/presentation_poster.jpg" autoplay muted loop playsinline preload="auto"></video>
+    </div>
+    <p class="video-note">Presentation video, 72 s, no sound.</p>
+
+    <section id="story" class="section reveal"><div class="container">
+<h2>Two missions my old drone could not fly</h2>
+<p>This project started from two failures with my previous setup: a 3S BetaFPV Baby Ape Pro V3 with a RunCam Thumb Pro W mounted on top, analog video and Fatshark HDO+ goggles.</p>
+<h3>Filming my friends skiing</h3>
+<p>I wanted drone shots of my friends in the mountains. I got some good footage, but the day showed every weakness of the setup:</p>
+<ul>
+<li><strong>Video link.</strong> Analog reception is better when the drone is above the pilot, so I stood at the bottom of the slope. I lost minutes finding my friends, and even at 1.2 W the analog transmitter struggled.</li>
+<li><strong>Image.</strong> The low-resolution analog camera made it hard to read the relief and the details of the snow.</li>
+<li><strong>Batteries.</strong> The cold made the 3S 450 mAh packs sag fast, sometimes enough to cut the video transmitter. I only had three, each good for a short flight, and they came back slightly damaged.</li>
+<li><strong>No GPS.</strong> Had anything gone wrong, 250 € of gear would have stayed on the mountain.</li>
+<li><strong>Setup.</strong> The external camera on its own mount made transport and setup tedious.</li>
+</ul>
+<div class="fig-row">
+<figure class="fig"><img src="media/babyape.jpg" alt="The old Baby Ape Pro V3 with its 3S packs and the RunCam mounted on top" loading="lazy" /><figcaption>My old setup: 3S packs, analog video, and a 4K camera mounted on top.</figcaption></figure>
+<figure class="fig"><img src="media/ski_route.jpg" alt="Satellite view of the ski route" loading="lazy" /><figcaption>The ski run I filmed: 1.1 km from about 2,680 m. Imagery © Google.</figcaption></figure>
+</div>
+<h3>Filming the coast near home</h3>
+<p>I also wanted cinematic shots of the coast near where I live. A decree from the Conservatoire du littoral forbids take-off and landing on an 800 m strip along the shore, but flying over it is allowed (confirmed by one of their officers).</p>
+<p>So the drone has to take off inland, cruise to the shore, film and come back: a loop of about 3.9 km. My battery and video link did not have that range, and even with a route planned on Google Maps I could not find the efficient path to the shore while flying.</p>
+<figure class="fig narrow"><img src="media/shore_route.jpg" alt="Satellite view of the planned loop from inland to the shore" loading="lazy" /><figcaption>The shore mission: a 3.9 km loop from an inland take-off point. Imagery © Google.</figcaption></figure>
+<h3>What the new drone had to do</h3>
+<ol class="req-list">
+<li>Fly long range.</li>
+<li>Fly at least 20 minutes on one battery.</li>
+<li>Send HD digital video with real range, and record it.</li>
+<li>Use batteries that survive a crash.</li>
+<li>Support GPS rescue and GPS waypoint navigation.</li>
+<li>Fit in a backpack: no external camera, every feature built in.</li>
+</ol>
+<p>Each section below answers part of this list, and the <a href="#results">results</a> score the drone against it.</p>
+
+<h3>Inspirations</h3>
+<p>The concept comes from the <strong>#nanolongrange</strong> trend: small, light quads that trade punch for flight time and range. Dave_C FPV started it with the Rekon3 and Rekon35, and Mediocre Nerd refined it once cheap digital video systems reached the market. These four videos shaped my choices:</p>
+<div class="table-wrap"><table class="data-table">
+<thead><tr><th>Video</th><th>Channel</th><th>What I took from it</th></tr></thead><tbody>
+<tr><td><a href="https://youtu.be/hvgukykBTNo" target="_blank" rel="noopener">The #NanoLongRange Part II</a></td><td>Dave_C FPV</td><td>The core idea: a nano quad on one 18650 cell</td></tr>
+<tr><td><a href="https://youtu.be/PI8suYz2Tf0" target="_blank" rel="noopener">Building a 3D Printable FPV Drone Stronger than Carbon</a></td><td>Mediocre Nerd</td><td>My main inspiration: a printed frame can be stiff enough</td></tr>
+<tr><td><a href="https://youtu.be/PsRzXBNhFpo" target="_blank" rel="noopener">Rekon35 — LR Nano 2S Li-ion review</a></td><td>Tazkiller85</td><td>Whether going 2S is worth the extra mass</td></tr>
+<tr><td><a href="https://youtu.be/05MMplxqY7M" target="_blank" rel="noopener">Building a Better 1s Lithium Ion FPV Drone</a></td><td>Mediocre Nerd</td><td>Whether a 21700 cell on 1S is worth it</td></tr>
+</tbody></table></div>
+</div></section>
+    <section id="design" class="section reveal"><div class="container">
+<h2>Design choices</h2>
+<h3>Why a single 18650 cell on 1S</h3>
+<p class="lead">A Li-ion 18650 stores about 1.6 times more energy per gram than the 1S LiPo packs small drones usually fly, and over twice as much as my old 3S packs.</p>
+<div class="table-wrap"><table class="data-table">
+<thead><tr><th>Battery</th><th>Capacity</th><th>Mass</th><th>Energy</th><th>Energy density</th></tr></thead><tbody>
+<tr class="highlight"><td><a href="https://www.18650batterystore.com/Sony-18650-p/sony-vtc6.htm" target="_blank" rel="noopener">Sony VTC6 18650</a> (1S Li-ion, this drone)</td><td class="num">3000 mAh</td><td class="num">46.6 g</td><td class="num">10.8 Wh</td><td class="num"><strong>232 Wh/kg</strong></td></tr>
+<tr><td><a href="https://www.18650batterystore.com/products/molicel-p45b" target="_blank" rel="noopener">Molicel P45B 21700</a> (1S Li-ion)</td><td class="num">4500 mAh</td><td class="num">70 g</td><td class="num">16.2 Wh</td><td class="num">231 Wh/kg</td></tr>
+<tr><td><a href="https://betafpv.com/products/bt2-0-550mah-1s-battery-4pcs" target="_blank" rel="noopener">BetaFPV BT2.0 550 mAh</a> (1S LiPo HV)</td><td class="num">550 mAh</td><td class="num">14.0 g</td><td class="num">2.1 Wh</td><td class="num">149 Wh/kg</td></tr>
+<tr><td><a href="https://fpv24.com/en/gaoneng/gaoneng-gnb-lipo-akku-450mah-3s-111v-80c-xt30-square-type" target="_blank" rel="noopener">GNB 450 mAh 3S</a> (my old packs)</td><td class="num">450 mAh</td><td class="num">47 g</td><td class="num">5.0 Wh</td><td class="num">106 Wh/kg</td></tr>
+</tbody></table></div>
+<p class="table-note">Energy = nominal voltage × capacity, from the manufacturers' figures.</p>
+<ul>
+<li><strong>Discharge has caught up.</strong> Li-ion cells used to be too weak for FPV. The VTC6 now delivers 15 A continuous, 30 A with a thermal cut-off, which covers a 3-inch 1S quad.</li>
+<li><strong>Electronics have caught up too.</strong> Recent 1S flight controllers keep working down to 2.5 V, so most of the cell's capacity is usable.</li>
+<li><strong>Why not a 21700?</strong> It has the same energy density, so the extra 23 g mostly buys more mass to carry: a small gain in flight time for worse handling.</li>
+<li><strong>Why not 2S?</strong> Feasible, and the next step. One cell keeps the build and the charging simple.</li>
+<li><strong>Durable and practical.</strong> A steel-cased cell survives crashes and the bottom of a backpack, charges on any Li-ion charger, and costs a few euros in any vape shop.</li>
+</ul>
+<p>The trade-off is voltage sag: an 18650 drops more under load than a LiPo. Betaflight's sag compensation (<code>vbat_sag_compensation = 100</code>) keeps the drone feeling the same from a full to an empty cell.</p>
+<div class="why-grid">
+<article class="card"><h3>Why 3-inch</h3><ul>
+<li><strong>The right size for the cell.</strong> 3-inch props are the recommended size to lift a single 18650 efficiently.</li>
+<li><strong>Room for everything.</strong> Enough space for a digital video transmitter and a GPS module, both inside the frame.</li>
+<li><strong>Still long range.</strong> Big enough to cruise efficiently and handle some wind.</li>
+<li><strong>Still small.</strong> It fits in a hiking backpack and weighs well under 250 g, the threshold for the EU's least restrictive drone category.</li></ul></article>
+<article class="card"><h3>Why the Walksnail Ascent Lite+</h3><ul>
+<li><strong>Range.</strong> Advertised at up to 8 km in ideal conditions. I pair it with the Ascent VRX Pro receiver.</li>
+<li><strong>Adaptive power.</strong> It raises its transmit power only when needed, saving battery when the drone is close.</li>
+<li><strong>Image.</strong> Up to 1080p at 120 fps live. Fast subjects such as skiers stay sharp, though it is still below a 4K action camera.</li>
+<li><strong>Built tough.</strong> The 2.75 g transmitter sits in a metal case that doubles as a heat sink.</li>
+<li><strong>Shared view.</strong> The VRX Pro has two outputs: HDMI to my goggles to fly, and USB-C to a screen so my friends watch the live feed. It also records the video to a microSD card.</li></ul></article>
+<article class="card"><h3>Why GPS waypoints</h3><ul>
+<li><strong>Deploy the drone to the shot.</strong> The drone can take off where it is allowed and fly itself to a filming site several hundred metres away, such as the coast. I take over once it is there.</li>
+<li><strong>GPS rescue.</strong> If the video or radio link fails, the drone flies home on its own.</li>
+<li><strong>The battery makes it meaningful.</strong> With 10 minutes of flight, there is enough energy left for a long way home, which a 3-minute LiPo pack would not allow.</li></ul></article>
+<figure class="fig" style="margin:0"><img src="media/battery.jpg" alt="The drone next to a loose 18650 cell" loading="lazy" /><figcaption>One cell, 46.6 g, fitted lengthwise on the centre line.</figcaption></figure>
+</div>
+</div></section>
+    <section id="hardware" class="section reveal"><div class="container">
+<h2>Hardware</h2>
+<p class="lead">The drone costs about 200 € in parts, plus 149 $ for the ground receiver.</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>Part</th><th>Role</th><th>Price</th></tr></thead><tbody><tr><td><a href="https://www.drone-fpv-racer.com/flywoo-goku-f405-hd-1s-12a-aio-o4-o4-pro-elrs-15210.html" target="_blank" rel="noopener">Flywoo GOKU F405 HD 1S 12A AIO</a></td><td>Flight controller, 4 ESCs, ELRS receiver and barometer on one board</td><td class="num">77.90 €</td></tr><tr><td><a href="https://www.drone-fpv-racer.com/moteur-brushless-gts-v3-1203-11500kv-rcinpower-13482.html" target="_blank" rel="noopener">RCinPower GTS V3 1203 11500 kV × 4</a></td><td>Motors</td><td class="num">51.60 €</td></tr><tr><td><a href="https://www.caddxfpv.com/products/walksnail-ascent-hd-lite-plus-kit" target="_blank" rel="noopener">Walksnail Ascent Lite+ kit</a></td><td>Digital camera and video transmitter</td><td class="num">39.99 $</td></tr><tr><td><a href="https://www.drone-fpv-racer.com/gps-goku-gm10-nano-v31-flywoo-13510.html" target="_blank" rel="noopener">Flywoo GM10 Nano V3.1</a></td><td>GPS (u-blox M10)</td><td class="num">21.90 €</td></tr><tr><td><a href="https://www.18650batterystore.com/Sony-18650-p/sony-vtc6.htm" target="_blank" rel="noopener">Sony VTC6 18650</a></td><td>Battery</td><td class="num">≈ 8 €</td></tr><tr><td><a href="https://www.drone-fpv-racer.com/gemfan-hurricane-3020-3-15mm-9006.html" target="_blank" rel="noopener">Gemfan Hurricane 3020-3 / HQProp T3X2</a></td><td>Propellers, three- or two-blade (set of 4)</td><td class="num">2.50 € / 1.90 €</td></tr><tr><td>PLA filament</td><td>Frame, battery tray, canopy, camera mounts</td><td class="num">≈ 1 €</td></tr><tr><td><a href="https://www.caddxfpv.com/products/walksnail-ascent-fpv-vrx-pro" target="_blank" rel="noopener">Walksnail Ascent VRX Pro</a></td><td>Ground receiver: HDMI to goggles, USB-C to a screen, DVR</td><td class="num">149 $</td></tr></tbody></table></div>
+<p>I flew both two- and three-blade props. The three-blade Gemfans felt punchier in flight, so they are on the drone in every photo; I have not measured the difference.</p>
+<figure class="chart"><svg viewBox="0 0 760 392" role="img" aria-label="The cell is over a third of the take-off mass" font-size="13">
+<text x="0" y="22" font-size="16" font-weight="800" fill="#1d1f24">The cell is over a third of the take-off mass</text>
+<text x="0" y="46" font-size="12.5" fill="#6b6f78">36 % of 130 g · grams per part</text>
+<text x="328" y="97" text-anchor="end" fill="#1d1f24">18650 cell (Sony VTC6)</text>
+<rect x="340" y="84" width="340.0" height="20" rx="3" fill="#33538f" fill-opacity="1"><title>18650 cell (Sony VTC6): 46.6 g</title></rect>
+<text x="688.0" y="99" fill="#1d1f24" font-weight="800">46.6 g</text>
+<text x="328" y="131" text-anchor="end" fill="#1d1f24">Printed parts (frame, tray, canopy, mounts)</text>
+<rect x="340" y="118" width="277.3" height="20" rx="3" fill="#b9bcc3" fill-opacity="0.55"><title>Printed parts (frame, tray, canopy, mounts): 38.0 g</title></rect>
+<text x="625.3" y="133" fill="#1d1f24" font-weight="400">38.0 g *</text>
+<text x="328" y="165" text-anchor="end" fill="#1d1f24">4 × 1203 motors</text>
+<rect x="340" y="152" width="131.3" height="20" rx="3" fill="#b9bcc3" fill-opacity="1"><title>4 × 1203 motors: 18.0 g</title></rect>
+<text x="479.3" y="167" fill="#1d1f24" font-weight="400">18.0 g</text>
+<text x="328" y="199" text-anchor="end" fill="#1d1f24">Wires, screws, connector, strap</text>
+<rect x="340" y="186" width="70.8" height="20" rx="3" fill="#b9bcc3" fill-opacity="0.55"><title>Wires, screws, connector, strap: 9.7 g</title></rect>
+<text x="418.8" y="201" fill="#1d1f24" font-weight="400">9.7 g *</text>
+<text x="328" y="233" text-anchor="end" fill="#1d1f24">Ascent Lite+ (transmitter, camera, antenna)</text>
+<rect x="340" y="220" width="58.4" height="20" rx="3" fill="#b9bcc3" fill-opacity="0.55"><title>Ascent Lite+ (transmitter, camera, antenna): 8.0 g</title></rect>
+<text x="406.4" y="235" fill="#1d1f24" font-weight="400">8.0 g *</text>
+<text x="328" y="267" text-anchor="end" fill="#1d1f24">4 propellers</text>
+<rect x="340" y="254" width="27.7" height="20" rx="3" fill="#b9bcc3" fill-opacity="1"><title>4 propellers: 3.8 g</title></rect>
+<text x="375.7" y="269" fill="#1d1f24" font-weight="400">3.8 g</text>
+<text x="328" y="301" text-anchor="end" fill="#1d1f24">GOKU F405 HD 1S AIO</text>
+<rect x="340" y="288" width="24.8" height="20" rx="3" fill="#b9bcc3" fill-opacity="1"><title>GOKU F405 HD 1S AIO: 3.4 g</title></rect>
+<text x="372.8" y="303" fill="#1d1f24" font-weight="400">3.4 g</text>
+<text x="328" y="335" text-anchor="end" fill="#1d1f24">GM10 Nano V3.1 GPS</text>
+<rect x="340" y="322" width="18.2" height="20" rx="3" fill="#b9bcc3" fill-opacity="1"><title>GM10 Nano V3.1 GPS: 2.5 g</title></rect>
+<text x="366.2" y="337" fill="#1d1f24" font-weight="400">2.5 g</text>
+<text x="0" y="382" font-size="11.5" fill="#6b6f78">* estimate: printed parts from the STL volumes (2 walls, 30 % gyroid PLA); the rest closes the gap to the measured 130 g</text></svg><figcaption>Manufacturer masses; printed parts and wiring estimated. Total = measured take-off mass.</figcaption></figure>
+<p>Mass sits where it matters: the cell, the flight controller and the video transmitter are stacked on the centre line, close to the centre of mass.</p>
+</div></section>
+    <section id="cad" class="section reveal"><div class="container">
+<h2>Frame and CAD</h2>
+<p class="lead">I designed the frame in OnShape around the electronics, and it took three versions to fit everything.</p>
+<p>It prints in PLA as three main parts: the frame, the battery tray and the camera canopy.</p>
+
+<div class="viewer">
+  <model-viewer src="media/drone.glb" alt="Interactive 3D model of the 18650 drone" camera-controls touch-action="pan-y" auto-rotate auto-rotate-delay="0"
+    rotation-per-second="18deg" interaction-prompt="none" shadow-intensity="0.7" exposure="1.05" environment-image="neutral"
+    camera-orbit="35deg 68deg auto" poster="media/cad_render.jpg"></model-viewer>
+  <span class="viewer-hint">Drag to rotate · scroll or pinch to zoom</span>
+</div>
+<p class="table-note" style="margin-top:0.3rem">The LHCP antenna appears in the CAD; it is not fitted yet in the photos.</p>
+<p>The design rules:</p>
+<ul>
+<li><strong>Fit every component inside.</strong> No external camera, no loose modules.</li>
+<li><strong>106 × 106 mm motor base</strong> for 3-inch props.</li>
+<li><strong>25.5 × 25.5 mm mount</strong> for the flight controller, with a printed 20 × 20 mm adapter that stacks the video transmitter above it.</li>
+<li><strong>Mass on the centre line.</strong> The cell, the flight controller and the video transmitter sit close to the centre of mass, to keep the rotational inertia low.</li>
+<li><strong>GPS at the front, antenna at the back.</strong> Keeping them apart reduces interference from the video transmitter on the GPS.</li>
+</ul>
+<h3>Vibration-damped camera</h3>
+<p>The camera sits between two printed mounts that slide into the canopy. Each mount holds it through three S-shaped springs printed in the same part. They act as a low-pass filter: motor vibrations are absorbed before they reach the image, with no rubber dampers to add.</p>
+<div class="fig-row">
+<figure class="fig"><img src="media/camera_mount.jpg" alt="The two camera mounts holding the camera" loading="lazy" /><figcaption>The two mounts slide into the canopy and hold the camera.</figcaption></figure>
+<figure class="fig"><img src="media/camera_spring.jpg" alt="One camera mount with its three printed S-shaped springs" loading="lazy" /><figcaption>Three S-shaped springs per mount filter the vibrations.</figcaption></figure>
+</div>
+<h3>Printing</h3>
+<p>PLA, 0.4 mm nozzle, 2 walls, 30 % gyroid infill. For an FPV frame, stiffness matters more than strength: a flexible frame vibrates, and the gyro reads those vibrations as motion. Gyroid gives stiffness in every direction (<a href="https://help.prusa3d.com/article/infill-patterns_177130" target="_blank" rel="noopener">Prusa: infill patterns</a>, <a href="https://www.mdpi.com/2504-4494/9/4/134" target="_blank" rel="noopener">MDPI study</a>).</p>
+<p>I have not run a finite-element analysis on this frame yet, unlike <a href="../index.html#FPV-drone">my 4K drone frame</a>. It is on the list of next steps.</p>
+<div class="fig-row three portrait">
+<figure class="fig"><img src="media/top.jpg" alt="The drone seen from above with the cell installed" loading="lazy" /><figcaption>From above: cell, flight controller and transmitter on the centre line.</figcaption></figure>
+<figure class="fig"><img src="media/backpack.jpg" alt="The drone in a backpack" loading="lazy" /><figcaption>Everything is built in: it goes in a backpack.</figcaption></figure>
+<figure class="fig"><img src="media/battery.jpg" alt="The drone next to a loose 18650 cell" loading="lazy" /><figcaption>The cell slides into the printed tray.</figcaption></figure>
+</div>
+</div></section>
+    <section id="software" class="section reveal"><div class="container">
+<h2>Software and tuning</h2>
+<p class="lead">The drone runs Betaflight 2026.6, the first version with a GPS autopilot and a Flight Plan tab for waypoints.</p>
+<p>I upgraded from 2025.12, which only offered GPS rescue and position hold.</p>
+<h3>Tuning for a heavy cell on 1S</h3>
+<ul>
+<li><strong>RPM filtering.</strong> Bidirectional DShot300 with <code>motor_poles = 12</code> (the 1203 motors have 12 magnets, not the default 14) lets the filters track each motor's real speed.</li>
+<li><strong>Sag compensation at 100.</strong> The quad feels the same at 4.1 V and at 3.3 V.</li>
+<li><strong>Thrust linearisation at 30 and dynamic idle at 4,500 rpm.</strong> Small 1S motors respond better near low throttle and do not desync on throttle chops.</li>
+<li><strong>PID sliders.</strong> Master multiplier 1.2 for more authority on low voltage, damping 1.1 to control the bounce of a heavy cell, feedforward 0.8 for smoother footage.</li>
+<li><strong>Rates for cruising.</strong> 70 °/s at centre stick, 600 °/s maximum on roll and pitch, and a hover point at 45 % throttle with 0.30 expo for smooth altitude control.</li>
+</ul>
+<h3>Switches and safety</h3>
+<div class="table-wrap" style="max-width:520px"><table class="data-table"><thead><tr><th>Switch</th><th>Function</th></tr></thead><tbody>
+<tr><td>AUX1</td><td>Arm</td></tr><tr><td>AUX2</td><td>Angle (self-levelling)</td></tr><tr><td>AUX3</td><td>Position hold / autopilot</td></tr>
+<tr><td>AUX4</td><td>GPS rescue</td></tr><tr><td>AUX5</td><td>Beeper, to find the drone after a crash</td></tr></tbody></table></div>
+<p>If the radio link is lost, the failsafe triggers GPS rescue: the drone climbs at 4.5 m/s and flies home at 5 m/s.</p>
+<p>The drone has no compass. Betaflight learns its heading from the GPS, which needs a fast, straight nose-forward run after take-off before any GPS mode is trusted.</p>
+<p>Waypoint altitudes are entered above sea level, not above the take-off point. I read the field's GPS altitude before each mission and add the height I want.</p>
+</div></section>
+    <section id="simulator" class="section reveal"><div class="container">
+<h2>The simulator</h2>
+<p class="lead">Before risking the drone, I rehearsed every mission in a simulator I built, running the real Betaflight 2026.6.2 firmware against a physics model of this exact drone.</p>
+<p>The autopilot was new and only tested in simulation by its developers, so I wanted to see how it behaves on a 130 g quad before flying it for real.</p>
+<figure class="chart"><svg viewBox="0 0 760 352" role="img" aria-label="The simulator runs the real flight firmware against a physics model of this drone" font-size="13">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#6b6f78"/></marker></defs>
+<text x="0" y="22" font-size="15" font-weight="800" fill="#1d1f24">The simulator runs the real flight firmware against a physics model of this drone</text>
+<g fill="none" stroke="#6b6f78" stroke-width="1.25"><path d="M190 128H290" marker-start="url(#ar)" marker-end="url(#ar)"/><path d="M470 112H556" marker-end="url(#ar)"/><path d="M556 160H470" marker-end="url(#ar)"/><path d="M380 256V192" marker-end="url(#ar)"/><path d="M650 192V256" marker-end="url(#ar)"/></g>
+<rect x="0" y="72" width="190" height="104" rx="8" fill="none" stroke="#b9bcc3" stroke-width="1.25"/><text x="16" y="96" font-weight="800" fill="#1d1f24">Betaflight app</text><text x="16" y="114" font-size="11.5" fill="#6b6f78">the real configurator,</text><text x="16" y="130" font-size="11.5" fill="#6b6f78">as used on the drone</text>
+<rect x="290" y="72" width="180" height="120" rx="8" fill="#eef2f8" stroke="#33538f" stroke-width="2"/><text x="306" y="96" font-weight="800" fill="#1d1f24">Betaflight 2026.6.2</text><text x="306" y="114" font-size="11.5" fill="#1d1f24">the real firmware,</text><text x="306" y="130" font-size="11.5" fill="#1d1f24">compiled to run on a PC</text><text x="306" y="146" font-size="11.5" fill="#1d1f24">(SITL), all settings kept</text>
+<rect x="556" y="72" width="196" height="120" rx="8" fill="none" stroke="#b9bcc3" stroke-width="1.25"/><text x="572" y="96" font-weight="800" fill="#1d1f24">Physics model</text><text x="572" y="114" font-size="11.5" fill="#6b6f78">Python, this drone:</text><text x="572" y="130" font-size="11.5" fill="#6b6f78">130 g, 3-inch, 1S VTC6</text><text x="572" y="146" font-size="11.5" fill="#6b6f78">motors, battery sag,</text><text x="572" y="162" font-size="11.5" fill="#6b6f78">drag, wind, GPS noise</text>
+<rect x="290" y="256" width="462" height="76" rx="8" fill="none" stroke="#b9bcc3" stroke-width="1.25"/><text x="306" y="280" font-weight="800" fill="#1d1f24">Simulator interface</text><text x="306" y="298" font-size="11.5" fill="#6b6f78">virtual radio: mouse, keyboard or a real USB radio</text><text x="306" y="314" font-size="11.5" fill="#6b6f78">3D view, satellite map, step-by-step tutorial</text>
+<text x="240" y="102" text-anchor="middle" font-size="11.5" fill="#6b6f78">settings,</text>
+<text x="240" y="116" text-anchor="middle" font-size="11.5" fill="#6b6f78">live data</text>
+<text x="513" y="88" text-anchor="middle" font-size="11.5" fill="#6b6f78">motor</text>
+<text x="513" y="102" text-anchor="middle" font-size="11.5" fill="#6b6f78">commands</text>
+<text x="513" y="178" text-anchor="middle" font-size="11.5" fill="#6b6f78">simulated</text>
+<text x="513" y="192" text-anchor="middle" font-size="11.5" fill="#6b6f78">sensors</text>
+<text x="390" y="228" font-size="11.5" fill="#6b6f78">sticks, switches</text>
+<text x="660" y="228" font-size="11.5" fill="#6b6f78">drone state</text></svg></figure>
+<p>The firmware cannot tell it is not in the drone: every setting, flight mode, failsafe and the autopilot behave as on the real flight controller. I can load the drone's own configuration into it and practise with my real radio over USB.</p>
+<div class="fig-row">
+<figure class="fig"><img src="media/simulator_6.jpg" alt="Simulator chase view during an autopilot mission" loading="lazy" /><figcaption>Chase view: the drone flies the planned path (dotted line).</figcaption></figure>
+<figure class="fig"><img src="media/simulator_14.jpg" alt="Simulator view of the drone over the satellite map" loading="lazy" /><figcaption>The same mission over satellite imagery of the field.</figcaption></figure>
+</div>
+<h3>What it taught me before the first real flight</h3>
+<ul>
+<li><strong>Heading needs a real run.</strong> With no compass, a gentle 3 m/s run was not enough for the autopilot to learn its heading. About 30° of pitch at 5 m/s or more for 2–3 s worked.</li>
+<li><strong>Altitudes are above sea level.</strong> A waypoint at “20 m” would have sent the drone into the ground at a field 150 m above the sea.</li>
+<li><strong>The final descent is unsafe.</strong> In 2026.6.2, both the LAND waypoint and the end of GPS rescue drop the drone almost straight down. I now take over above home.</li>
+<li><strong>A complete mission works.</strong> A three-waypoint mission at 20 m above ground flew correctly and reported complete.</li>
+</ul>
+<p>While building it, I also found and fixed a crash in Betaflight's simulator build: sensor data arriving before the sensors were initialised made it crash at start-up.</p>
+<p>The simulator is not released for now.</p>
+</div></section>
+    <section id="testing" class="section reveal"><div class="container">
+<h2>Field testing</h2>
+<p class="lead">In two field tests, the autopilot reached the first waypoint both times, then lost control of its altitude before the second.</p>
+<p>Both tests flew a square of 4 waypoints at 30 m above the take-off point, in calm conditions.</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>Test</th><th>Mission</th><th>What happened</th></tr></thead><tbody>
+<tr><td>1</td><td>Square, fly-over waypoints, open field near home</td><td>Waypoint 1 reached after a fast climb. Heading correct. Sudden climb just before waypoint 2, twice: I stopped the mission.</td></tr>
+<tr><td>2</td><td>Same square, fly-by waypoints, another field; maximum throttle limited to 1750</td><td>Waypoint 1 reached, heading correct. Before waypoint 2, a sudden drop, then a +5 m climb; a near-crash, then a crash at 2:46. The motors stopped on impact.</td></tr>
+</tbody></table></div>
+<div class="fig-row">
+<figure class="fig"><img src="media/flightplan_test1.jpg" alt="Flight plan of test 1: four waypoints in a square" loading="lazy" /><figcaption>Test 1 flight plan. Imagery © Google.</figcaption></figure>
+<figure class="fig"><img src="media/flightplan_test2.jpg" alt="Flight plan of test 2: four waypoints in a square" loading="lazy" /><figcaption>Test 2 flight plan. Imagery © Google.</figcaption></figure>
+</div>
+<figure class="fig"><video src="media/autopilot.mp4" poster="media/autopilot_poster.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>Test 2 at 3× speed: the autopilot flies to waypoint 1, then 2. Data panel decoded from the on-screen display recording.</figcaption></figure>
+<h3>What the data shows</h3>
+<p>The drone has no onboard log, but the video receiver records the on-screen display in a separate file. I wrote a <a href="osd_decoder.py">Python script</a> that decodes it frame by frame: about 7 values per second for current, voltage, stick throttle, distance from home, satellites and flight mode.</p>
+<figure class="chart"><svg viewBox="0 0 760 412" role="img" aria-label="In autopilot, the current spikes to 24 A while my stick does not move" font-size="12">
+<text x="0" y="22" font-size="16" font-weight="800" fill="#1d1f24">In autopilot, the current spikes to 24 A while my stick does not move</text>
+<text x="0" y="44" font-size="12.5" fill="#6b6f78">Field test 1, decoded from the on-screen display recording · 1 s steps</text>
+<rect x="242.7" y="78" width="68.3" height="292" fill="#eef2f8"/>
+<text x="248.7" y="268" font-size="11.5" fill="#6b6f78">autopilot</text>
+<rect x="451.7" y="78" width="108.8" height="292" fill="#eef2f8"/>
+<text x="457.7" y="268" font-size="11.5" fill="#6b6f78">autopilot</text>
+<line x1="104" x2="744" y1="252.0" y2="252.0" stroke="#ececea"/><text x="96" y="256.0" text-anchor="end" fill="#6b6f78">0 A</text>
+<line x1="104" x2="744" y1="124.0" y2="124.0" stroke="#ececea"/><text x="96" y="128.0" text-anchor="end" fill="#6b6f78">20 A</text>
+<line x1="104" x2="744" y1="194.4" y2="194.4" stroke="#6b6f78" stroke-dasharray="4 4"/>
+<text x="96" y="198.4" text-anchor="end" fill="#6b6f78">cruise ≈ 9 A</text>
+<text x="0" y="78" font-size="12.5" font-weight="800" fill="#1d1f24">Current drawn from the cell</text>
+<path d="M108.3 240.8L110.4 232.2L112.5 204.7L114.7 190.3L116.8 200.3L118.9 198.7L121.1 197.1L123.2 198.3L125.3 199.6L127.5 199.0L129.6 201.6L131.7 193.1L133.9 195.9L136.0 196.8L138.1 191.1L140.3 191.3L142.4 193.8L144.5 195.7L146.7 196.4L148.8 196.2L150.9 197.1L153.1 204.3L155.2 208.7L157.3 210.3L159.5 203.4L161.6 187.8L163.7 187.2L165.9 197.7L168.0 197.5L170.1 198.3L172.3 197.4L174.4 197.4L176.5 198.7L178.7 190.9L180.8 186.8L182.9 197.9L185.1 197.4L187.2 193.0L189.3 193.0L191.5 199.7L193.6 199.9L195.7 199.9L197.9 199.5L200.0 206.8L202.1 204.7L204.3 184.9L206.4 187.2L208.5 191.3L210.7 185.1L212.8 180.3L214.9 191.5L217.1 195.6L219.2 194.0L221.3 194.1L223.5 198.9L225.6 200.2L227.7 198.0L229.9 197.8L232.0 198.1L234.1 199.1L236.3 199.3L238.4 201.1L240.5 199.7L242.7 185.7L244.8 187.2L246.9 193.1L249.1 198.9L251.2 200.2L253.3 198.1L255.5 199.1L257.6 202.4L259.7 201.6L261.9 210.7L264.0 198.4L266.1 191.7L268.3 193.1L270.4 187.7L272.5 197.3L274.7 205.7L276.8 204.7L278.9 204.6L281.1 204.3L283.2 196.4L285.3 195.4L287.5 202.5L289.6 194.9L291.7 195.8L293.9 202.5L296.0 197.5L298.1 202.6L300.3 196.2L302.4 188.8L304.5 107.9L306.7 95.8L308.8 232.2L310.9 200.2L313.1 191.5L315.2 188.7L317.3 192.2L319.5 193.0L321.6 200.2L323.7 200.9L325.9 207.0L328.0 206.9L330.1 155.3L332.3 148.0L334.4 189.9L336.5 175.1L338.7 174.6L340.8 191.7L342.9 192.2L345.1 187.4L347.2 186.1L349.3 183.2L351.5 187.0L353.6 197.2L355.7 190.9L357.9 194.7L360.0 198.1L362.1 197.8L364.3 196.6L366.4 196.5L368.5 202.1L370.7 153.8L372.8 173.2L374.9 194.4L377.1 200.5L379.2 204.3L381.3 195.8L383.5 134.7L385.6 135.6L387.7 181.9L389.9 197.5L392.0 197.2L394.1 194.9L396.3 192.5L398.4 194.6L400.5 198.4L402.7 198.4L404.8 195.4L406.9 195.9L409.1 197.5L411.2 199.7L413.3 201.1L415.5 200.0L417.6 199.9L419.7 200.2L421.9 200.0L424.0 200.7L426.1 201.8L428.3 198.4L430.4 196.0L432.5 194.3L434.7 195.7L436.8 198.6L438.9 196.8L441.1 197.9L443.2 200.0L445.3 201.4L447.5 199.4L449.6 194.3L451.7 185.1L453.9 178.2L456.0 153.1L458.1 167.3L460.3 178.9L462.4 194.4L464.5 164.3L466.7 156.1L468.8 178.0L470.9 201.2L473.1 203.0L475.2 179.8L477.3 184.4L479.5 184.9L481.6 187.2L483.7 183.7L485.9 172.1L488.0 171.6L490.1 180.0L492.3 103.6L494.4 101.8L496.5 224.2L498.7 113.8L500.8 99.4L502.9 104.7L505.1 190.9L507.2 178.4L509.3 160.0L511.5 166.3L513.6 189.9L515.7 193.3L517.9 176.5L520.0 176.5L522.1 190.9L524.3 195.8L526.4 198.7L528.5 107.4L530.7 184.4L532.8 233.4L534.9 112.5L537.1 98.9L539.2 103.6L541.3 189.3L543.5 194.7L545.6 200.2L547.7 198.0L549.9 195.2L552.0 200.5L554.1 198.4L556.3 202.5L558.4 201.2L560.5 201.5L562.7 203.1L564.8 201.6L566.9 199.7L569.1 201.8L571.2 199.4L573.3 194.1L575.5 195.9L577.6 197.8L579.7 196.5L581.9 195.8L584.0 199.5L586.1 192.8L588.3 193.4L590.4 192.5L592.5 192.7L594.7 192.8L596.8 187.4L598.9 184.7L601.1 189.4L603.2 193.0L605.3 193.1L607.5 190.6L609.6 195.4L611.7 195.9L613.9 195.7L616.0 196.8L618.1 197.5L620.3 191.3L622.4 189.3L624.5 195.7L626.7 195.7L628.8 194.1L630.9 194.7L633.1 193.3L635.2 192.2L637.3 189.3L639.5 181.5L641.6 181.7L643.7 179.4L645.9 181.4L648.0 174.9L650.1 176.5L652.3 175.2L654.4 181.4L656.5 177.4L658.7 180.3L660.8 180.0L662.9 179.1L665.1 178.4L667.2 172.8L669.3 171.5L671.5 177.8L673.6 178.4L675.7 171.8L677.9 176.8L680.0 173.6L682.1 172.8L684.3 183.5L686.4 186.3L688.5 180.8L690.7 180.3L692.8 192.7L694.9 192.2L697.1 191.9L699.2 193.3L701.3 186.6L703.5 182.8L705.6 174.8L707.7 189.0L709.9 195.4L712.0 194.1L714.1 197.9L716.3 193.0L718.4 189.1L720.5 191.9L722.7 190.6L724.8 193.3L726.9 190.0L729.1 190.9L731.2 195.4L733.3 190.3L735.5 189.3L737.6 195.4L739.7 196.4L741.9 195.0L744.0 190.4" fill="none" stroke="#33538f" stroke-width="1.6"/>
+<circle cx="306.7" cy="95.8" r="4" fill="#33538f"/><text x="298.7" y="99.8" text-anchor="end" font-weight="800" fill="#1d1f24">24.4 A</text>
+<text x="0" y="290" font-size="12.5" font-weight="800" fill="#1d1f24">My throttle stick</text>
+<line x1="104" x2="744" y1="370.0" y2="370.0" stroke="#ececea"/><text x="96" y="374.0" text-anchor="end" fill="#6b6f78">0 %</text>
+<line x1="104" x2="744" y1="335.0" y2="335.0" stroke="#ececea"/><text x="96" y="339.0" text-anchor="end" fill="#6b6f78">50 %</text>
+<line x1="104" x2="744" y1="300.0" y2="300.0" stroke="#ececea"/><text x="96" y="304.0" text-anchor="end" fill="#6b6f78">100 %</text>
+<path d="M108.3 370.0L110.4 363.2L112.5 347.4L114.7 332.6L116.8 339.8L118.9 335.9L121.1 334.3L123.2 336.6L125.3 336.5L127.5 336.2L129.6 336.9L131.7 333.5L133.9 335.1L136.0 334.7L138.1 331.5L140.3 332.2L142.4 333.4L144.5 334.2L146.7 334.3L148.8 334.3L150.9 335.4L153.1 339.6L155.2 341.3L157.3 341.3L159.5 340.2L161.6 332.2L163.7 333.0L165.9 335.2L168.0 335.0L170.1 335.0L172.3 335.0L174.4 335.0L176.5 339.6L178.7 339.1L180.8 332.9L182.9 335.0L185.1 335.0L187.2 332.3L189.3 334.0L191.5 336.4L193.6 336.4L195.7 336.4L197.9 337.6L200.0 339.8L202.1 339.2L204.3 330.7L206.4 330.6L208.5 333.7L210.7 330.9L212.8 329.0L214.9 333.7L217.1 335.5L219.2 334.1L221.3 334.4L223.5 336.6L225.6 337.1L227.7 336.3L229.9 335.7L232.0 336.2L234.1 336.4L236.3 337.0L238.4 337.5L240.5 337.8L242.7 337.6L244.8 337.6L246.9 338.5L249.1 338.5L251.2 338.5L253.3 338.5L255.5 338.5L257.6 338.5L259.7 338.5L261.9 338.5L264.0 338.5L266.1 338.5L268.3 338.5L270.4 338.5L272.5 338.5L274.7 338.5L276.8 338.5L278.9 338.5L281.1 338.5L283.2 338.5L285.3 338.5L287.5 338.5L289.6 338.5L291.7 338.5L293.9 338.5L296.0 338.5L298.1 338.5L300.3 338.5L302.4 338.5L304.5 338.5L306.7 338.5L308.8 338.5L310.9 337.8L313.1 333.7L315.2 333.0L317.3 333.0L319.5 334.2L321.6 337.1L323.7 337.9L325.9 339.9L328.0 339.9L330.1 332.1L332.3 323.2L334.4 333.6L336.5 330.3L338.7 331.0L340.8 334.3L342.9 334.2L345.1 331.3L347.2 331.0L349.3 330.2L351.5 333.4L353.6 335.0L355.7 334.7L357.9 334.9L360.0 337.9L362.1 336.9L364.3 335.0L366.4 336.5L368.5 338.3L370.7 337.3L372.8 337.1L374.9 337.1L377.1 337.1L379.2 337.1L381.3 337.1L383.5 336.7L385.6 337.1L387.7 337.3L389.9 337.7L392.0 337.8L394.1 337.8L396.3 337.8L398.4 337.8L400.5 337.8L402.7 337.8L404.8 337.8L406.9 337.8L409.1 337.8L411.2 345.5L413.3 332.4L415.5 330.3L417.6 329.4L419.7 329.9L421.9 330.1L424.0 330.1L426.1 330.3L428.3 330.8L430.4 331.4L432.5 331.8L434.7 332.2L436.8 332.2L438.9 332.9L441.1 332.9L443.2 332.9L445.3 332.9L447.5 332.9L449.6 332.4L451.7 332.2L453.9 332.2L456.0 332.2L458.1 332.8L460.3 333.3L462.4 333.5L464.5 332.9L466.7 333.2L468.8 333.6L470.9 334.1L473.1 333.6L475.2 333.6L477.3 333.6L479.5 333.6L481.6 333.6L483.7 333.6L485.9 333.6L488.0 333.6L490.1 333.6L492.3 333.6L494.4 333.6L496.5 333.6L498.7 333.6L500.8 333.6L502.9 333.6L505.1 333.6L507.2 333.6L509.3 333.6L511.5 333.6L513.6 333.6L515.7 333.6L517.9 333.6L520.0 334.2L522.1 334.3L524.3 334.3L526.4 334.3L528.5 334.3L530.7 334.3L532.8 334.3L534.9 334.5L537.1 335.0L539.2 335.5L541.3 336.2L543.5 336.0L545.6 336.8L547.7 336.3L549.9 336.3L552.0 337.6L554.1 339.4L556.3 339.4L558.4 338.4L560.5 338.1L562.7 339.3L564.8 337.8L566.9 337.3L569.1 337.9L571.2 337.5L573.3 333.9L575.5 337.0L577.6 335.8L579.7 335.6L581.9 335.3L584.0 337.2L586.1 333.9L588.3 334.1L590.4 335.1L592.5 333.9L594.7 334.0L596.8 332.3L598.9 330.7L601.1 334.7L603.2 333.8L605.3 334.3L607.5 333.5L609.6 335.5L611.7 335.8L613.9 335.7L616.0 336.7L618.1 336.4L620.3 333.8L622.4 334.2L624.5 336.3L626.7 335.4L628.8 334.7L630.9 334.8L633.1 333.9L635.2 333.5L637.3 332.3L639.5 329.9L641.6 329.2L643.7 329.1L645.9 330.1L648.0 329.3L650.1 329.6L652.3 330.0L654.4 328.8L656.5 328.8L658.7 329.6L660.8 328.6L662.9 328.3L665.1 328.1L667.2 326.5L669.3 327.3L671.5 328.2L673.6 328.8L675.7 327.4L677.9 328.7L680.0 327.2L682.1 327.2L684.3 333.7L686.4 331.6L688.5 330.6L690.7 332.3L692.8 335.6L694.9 334.1L697.1 334.3L699.2 335.1L701.3 331.7L703.5 330.0L705.6 328.6L707.7 333.1L709.9 335.8L712.0 335.2L714.1 336.9L716.3 334.6L718.4 332.9L720.5 333.6L722.7 333.0L724.8 335.0L726.9 333.7L729.1 333.3L731.2 337.9L733.3 335.4L735.5 333.8L737.6 336.3L739.7 336.2L741.9 335.0L744.0 333.5" fill="none" stroke="#b9bcc3" stroke-width="1.6"/>
+<text x="104.0" y="392" text-anchor="middle" fill="#6b6f78">0:00</text>
+<text x="232.0" y="392" text-anchor="middle" fill="#6b6f78">1:00</text>
+<text x="360.0" y="392" text-anchor="middle" fill="#6b6f78">2:00</text>
+<text x="488.0" y="392" text-anchor="middle" fill="#6b6f78">3:00</text>
+<text x="616.0" y="392" text-anchor="middle" fill="#6b6f78">4:00</text>
+<text x="744.0" y="392" text-anchor="middle" fill="#6b6f78">5:00</text>
+<text x="744" y="408" text-anchor="end" font-size="11" fill="#6b6f78">flight time (min:s)</text></svg><figcaption>Source: AscentG0020.osd, field test 1. Autopilot periods from the flight video.</figcaption></figure>
+<ul>
+<li><strong>The autopilot is asking for full power, not me.</strong> During each spike, the current triples for 1 to 5 s while the throttle stick does not move. The altitude controller is overreacting. Smaller spikes also appear in position hold, which uses the same controller.</li>
+<li><strong>The rest is healthy.</strong> The cell never dropped below 3.54 V, and the drone kept 8 to 14 satellites. Test 1 went 185 m from home, test 2 104 m.</li>
+<li><strong>What the display cannot tell me is altitude</strong>, because I had not put it on screen.</li>
+</ul>
+<figure class="fig"><video src="media/surge.mp4" poster="media/surge_poster.jpg" autoplay muted loop playsinline preload="metadata"></video><figcaption>Test 1, real time: a sudden climb before waypoint 2. The current jumps to 23 A while the stick stays at 52 %.</figcaption></figure>
+<h3>Hypotheses and next tests</h3>
+<ol>
+<li><strong>Barometer disturbed by airflow.</strong> The board's barometer is uncovered; propwash and forward flight change the pressure it reads. Fix: a piece of open-cell foam over it.</li>
+<li><strong>Hover throttle no longer right.</strong> <code>ap_hover_throttle</code> came from the simulator, and the thrust curve changed in Betaflight 2026.6. Check: read the hover throttle in position hold at the start and end of a cell.</li>
+<li><strong>Heading error.</strong> Without a compass, a wrong learned heading makes the drone lean hard to correct, and lose altitude. Check: does the path to waypoint 2 curve?</li>
+</ol>
+<p>Before the next test: add altitude and vertical speed to the on-screen display, enable radio telemetry logging, and cover the barometer.</p>
+</div></section>
+    <section id="results" class="section reveal"><div class="container">
+<h2>Results</h2>
+<p class="lead">The drone fully meets three of its six requirements; range, flight time and waypoint navigation are partly met.</p>
+<div class="table-wrap"><table class="data-table"><thead><tr><th>Requirement</th><th>Status</th><th>Where it stands</th></tr></thead><tbody><tr><td><strong>Long range</strong></td><td><span class="pill partly">Partly</span></td><td>Tested to 185 m from home; the video link is advertised for kilometres, but no long-range flight yet</td></tr><tr><td><strong>20 minutes of flight</strong></td><td><span class="pill partly">Partly</span></td><td>10 minutes proven with 3.2 V left; about 18 minutes estimated from the measured current</td></tr><tr><td><strong>HD digital video, recorded</strong></td><td><span class="pill met">Met</span></td><td>1080p live, recorded on the ground receiver, shared on a second screen</td></tr><tr><td><strong>Battery that survives a crash</strong></td><td><span class="pill met">Met</span></td><td>Steel-cased Li-ion cell, through a crash in test 2</td></tr><tr><td><strong>GPS rescue and waypoints</strong></td><td><span class="pill partly">Partly</span></td><td>Waypoint 1 reached twice; altitude control not reliable yet</td></tr><tr><td><strong>Fits in a backpack</strong></td><td><span class="pill met">Met</span></td><td>Everything built in, no external camera</td></tr></tbody></table></div>
+<p>The autopilot isn't there yet, but the footage already is: flown by hand, the drone films clean, stabilised 1080p.</p>
+<h3>Flight time: 20 minutes is within reach</h3>
+<p>The 10-minute flight ended with 3.2 V still in the cell, and the cell can go down to 2.5 V. The flight controller runs down to that voltage, and its built-in regulator keeps the video transmitter powered as the cell sags.</p>
+<p>The field-test data gives a first estimate. The drone draws about 9 A on average (747 mAh in 5 minutes of test 1), so the VTC6's 3000 mAh would last about 20 minutes to empty. Keeping a safety margin above 2.8 V, about 18 minutes looks realistic.</p>
+<p>Two checks remain: a flight to a low cell voltage, and a calibration of the current sensor against the charge put back by the charger.</p>
+<h3>What I learned</h3>
+<ul>
+<li><strong>Simulate first.</strong> The simulator caught the altitude reference and heading traps before they could cost a drone.</li>
+<li><strong>Log what you will need.</strong> I had current but not altitude on screen; the next test will record both.</li>
+<li><strong>New firmware features are new.</strong> The 2026.6 autopilot works on paper and in simulation, but a light 1S quad exposes its limits.</li>
+</ul>
+<h3>Next steps</h3>
+<ol>
+<li><strong>Fix the altitude control.</strong> Wait for a patched Betaflight release, or tune the current one myself with Claude Code, using the field-test data and the simulator.</li>
+<li><strong>Measure the full flight time</strong> down to a low cell voltage, to confirm the 18-to-20-minute estimate.</li>
+<li><strong>Print in better materials.</strong> A new printer that handles nylon-carbon for a stiffer frame, and TPU for a tougher canopy that also damps vibrations.</li>
+<li><strong>Try 2S on 3.5-inch props</strong> for a higher cruising speed, to reach filming locations faster. It needs a new flight controller and motors, and the electronics will be enclosed to keep snow out of the frame.</li>
+</ol>
+</div></section>
+    <section id="downloads" class="section reveal"><div class="container"><h2>Downloads</h2><ul class="downloads"><li><a href="cad/18650_drone_full_assembly.step" download>CAD: full assembly (STEP)</a><span class="size">2.9 MB</span></li><li><a href="cad/18650_drone_STL.zip" download>Printable parts (STL): frame, battery tray, canopy, camera mounts, spacer, transmitter holder</a><span class="size">13 MB</span></li><li><a href="betaflight_diff_all.txt" download>Betaflight configuration (diff all)</a><span class="size">3 KB</span></li><li><a href="osd_decoder.py" download>Telemetry decoder: Python script that reads Walksnail .osd recordings</a><span class="size">5 KB</span></li><li><a href="media/drone.glb" download>3D model for the web (glTF binary)</a><span class="size">1.1 MB</span></li></ul><p class="links" style="margin-top:1rem"><a href="https://github.com/VictorHelies/portfolio/tree/main/18650_drone" target="_blank" rel="noopener">View all files on GitHub</a></p></div></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><p>© Victor Héliès – 2026 · <a href="../index.html">Back to the portfolio</a></p></div>
+  </footer>
+
+  <script>
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const revealEls = document.querySelectorAll(".reveal");
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) { entry.target.classList.add("visible"); observer.unobserve(entry.target); }
+        });
+      }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+      revealEls.forEach((el) => observer.observe(el));
+    } else {
+      revealEls.forEach((el) => el.classList.add("visible"));
+    }
+    if (reduceMotion) {
+      document.querySelectorAll("video[autoplay]").forEach((v) => { v.removeAttribute("autoplay"); v.pause(); v.controls = true; });
+      document.querySelectorAll("model-viewer").forEach((m) => m.removeAttribute("auto-rotate"));
+    }
+    const topbar = document.getElementById("topbar");
+    window.addEventListener("scroll", () => topbar.classList.toggle("scrolled", window.scrollY > 10), { passive: true });
+    const dropdown = document.querySelector(".dropdown");
+    const dropbtn = document.querySelector(".dropbtn");
+    dropbtn.addEventListener("click", (e) => { e.stopPropagation(); const open = dropdown.classList.toggle("open"); dropbtn.setAttribute("aria-expanded", open); });
+    document.addEventListener("click", () => { dropdown.classList.remove("open"); dropbtn.setAttribute("aria-expanded", "false"); });
+    document.querySelectorAll(".dropdown-content a").forEach((a) => a.addEventListener("click", () => { dropdown.classList.remove("open"); dropbtn.setAttribute("aria-expanded", "false"); }));
+  </script>
+</body>
+</html>

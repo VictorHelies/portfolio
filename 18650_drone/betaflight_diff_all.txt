@@ -1,0 +1,142 @@
+# diff all
+
+# version
+# Betaflight / STM32F405 (F405) 2025.12.2 May 26 2026 / 07:39:36 (79065c96b) MSP API: 1.47
+# config rev: e378347
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name FLYWOOF405S_AIO
+manufacturer_id FLWO
+mcu_id 0040005a3235511133323831
+signature
+
+# feature
+feature GPS
+feature TELEMETRY
+feature LED_STRIP
+feature OSD
+
+# serial
+serial UART3 64 115200 57600 0 115200
+serial UART4 2 115200 57600 0 115200
+serial UART6 131073 115200 57600 0 115200
+
+# led
+led 0 8,8::CB:8
+led 1 9,8::CB:8
+led 2 10,8::CB:8
+led 3 11,8::CB:8
+
+# aux
+aux 0 0 0 1600 2100 0 0
+aux 1 1 1 1675 2100 0 0
+aux 2 27 2 1500 2100 0 0
+aux 3 46 3 1500 2100 0 0
+aux 4 13 4 1500 2100 0 0
+
+# master
+set dyn_notch_count = 1
+set dyn_notch_q = 500
+set acc_calibration = -19,-2,-24,1
+set mag_hardware = NONE
+set blackbox_sample_rate = 1/1
+set blackbox_device = NONE
+set dshot_bidir = ON
+set dshot_bitbang = OFF
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 12
+set failsafe_procedure = GPS-RESCUE
+set align_board_yaw = 90
+set bat_capacity = 4000
+set vbat_max_cell_voltage = 415
+set vbat_min_cell_voltage = 250
+set vbat_warning_cell_voltage = 300
+set ibata_scale = 553
+set gps_auto_baud = ON
+set gps_ublox_use_galileo = ON
+set gps_set_home_point_once = ON
+set gps_rescue_ascend_rate = 450
+set gps_rescue_ground_speed = 500
+set gps_rescue_allow_arming_without_fix = ON
+set pid_process_denom = 2
+set osd_vbat_pos = 14849
+set osd_rssi_dbm_pos = 14881
+set osd_tim_1_pos = 15820
+set osd_flymode_pos = 14902
+set osd_throttle_pos = 15854
+set osd_crosshairs_pos = 14648
+set osd_ah_sbar_pos = 239
+set osd_ah_pos = 80
+set osd_current_pos = 14816
+set osd_gps_sats_pos = 15502
+set osd_home_dir_pos = 14681
+set osd_home_dist_pos = 15470
+set osd_warnings_pos = 14708
+set osd_avg_cell_voltage_pos = 315
+set osd_esc_tmp_pos = 1198
+set osd_core_temp_pos = 1262
+set osd_sys_vtx_temp_pos = 1230
+set osd_stat_bitmask = 4208428
+set ap_hover_throttle = 1450
+
+profile 0
+
+# profile 0
+set vbat_sag_compensation = 100
+set p_pitch = 56
+set i_pitch = 100
+set d_pitch = 44
+set f_pitch = 119
+set p_roll = 53
+set i_roll = 95
+set d_roll = 39
+set f_roll = 115
+set p_yaw = 53
+set i_yaw = 95
+set f_yaw = 115
+set d_max_roll = 52
+set d_max_pitch = 60
+set thrust_linear = 30
+set dyn_idle_min_rpm = 45
+set simplified_master_multiplier = 120
+set simplified_d_gain = 110
+set simplified_feedforward_gain = 80
+
+profile 1
+
+profile 2
+
+profile 3
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set thr_mid = 45
+set thr_expo = 30
+set roll_expo = 50
+set pitch_expo = 50
+set yaw_expo = 40
+set roll_srate = 60
+set pitch_srate = 60
+set yaw_srate = 45
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+#
